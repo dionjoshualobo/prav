@@ -1,3 +1,15 @@
+# Prav Messenger
+
+## Build instructions
+```
+sudo apt install android-sdk android-sdk-platform-23
+export ANDROID_HOME=/usr/lib/android-sdk
+./gradlew assembleQuicksyFreeRelease
+```
+The following will give output in `build/outputs/apk/quicksyFree/release`
+
+--- Original Readme ---
+
 <h1 align="center">Conversations</h1>
 
 <p align="center">Conversations: the very last word in instant messaging</p>
