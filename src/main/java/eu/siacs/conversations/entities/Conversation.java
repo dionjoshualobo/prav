@@ -454,20 +454,6 @@ public class Conversation extends AbstractEntity implements Blockable, Comparabl
         return false;
     }
 
-    public List<Message> findMessagesBy(MucOptions.User user) {
-        List<Message> result = new ArrayList<>();
-        synchronized (this.messages) {
-            for (Message m : this.messages) {
-                // occupant id?
-                final Jid trueCp = m.getTrueCounterpart();
-                if (m.getCounterpart().equals(user.getFullJid()) || (trueCp != null && trueCp.equals(user.getRealJid()))) {
-                    result.add(m);
-                }
-            }
-        }
-        return result;
-    }
-
     public void populateWithMessages(final List<Message> messages) {
         synchronized (this.messages) {
             messages.clear();
