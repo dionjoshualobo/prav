@@ -484,7 +484,6 @@ public class AvatarService implements OnAdvancedStreamFeaturesLoaded {
 			return get(message.getCounterparts(), size, cachedOnly);
 		} else if (message.getStatus() == Message.STATUS_RECEIVED) {
 			Contact c = message.getContact();
-			if (message.getModerated() != null) c = null;
 			if (c != null && (c.getProfilePhoto() != null || c.getAvatarFilename() != null)) {
 				return get(c, size, cachedOnly);
 			} else if (conversation instanceof Conversation && message.getConversation().getMode() == Conversation.MODE_MULTI) {
@@ -496,7 +495,6 @@ public class AvatarService implements OnAdvancedStreamFeaturesLoaded {
 				} else {
 					user = mucOptions.findUserByFullJid(message.getCounterpart());
 				}
-				if (message.getModerated() != null) user = null;
 				if (user != null) {
 					return getImpl(user, size, cachedOnly);
 				}

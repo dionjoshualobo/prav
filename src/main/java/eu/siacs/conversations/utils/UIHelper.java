@@ -513,8 +513,6 @@ public class UIHelper {
     }
 
     public static String getMessageDisplayName(final Message message) {
-        if (message.getModerated() != null) return "moderated";
-
         final Conversational conversation = message.getConversation();
         if (message.getStatus() == Message.STATUS_RECEIVED) {
             final Contact contact = message.getContact();
