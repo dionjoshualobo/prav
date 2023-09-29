@@ -8,6 +8,9 @@ export ANDROID_HOME=/usr/lib/android-sdk
 ```
 The following will give output in `build/outputs/apk/quicksyFree/release`
 
+### Updating assets
+If you want to change a logo/icon/whatever, change the svg in /art, install ruby, ruby-libxml, and run render.rb 
+
 --- Original Readme ---
 
 <h1 align="center">Conversations</h1>
