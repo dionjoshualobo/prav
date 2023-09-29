@@ -19,6 +19,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
+import java.util.stream.Collectors;
 
 import eu.siacs.conversations.Config;
 import eu.siacs.conversations.crypto.axolotl.AxolotlService;
@@ -33,6 +34,7 @@ import eu.siacs.conversations.utils.MessageUtils;
 import eu.siacs.conversations.utils.MimeUtils;
 import eu.siacs.conversations.utils.UIHelper;
 import eu.siacs.conversations.xmpp.Jid;
+import eu.siacs.conversations.xml.Element;
 
 public class Message extends AbstractEntity implements AvatarService.Avatarable {
 
@@ -103,6 +105,7 @@ public class Message extends AbstractEntity implements AvatarService.Avatarable 
     protected boolean deleted = false;
     protected boolean carbon = false;
     protected boolean oob = false;
+    protected List<Element> payloads = new ArrayList<>();
     protected List<Edit> edits = new ArrayList<>();
     protected String relativeFilePath;
     protected boolean read = true;
@@ -803,8 +806,25 @@ public class Message extends AbstractEntity implements AvatarService.Avatarable 
         return isGeoUri;
     }
 
+    protected List<Element> getSims() {
+        return payloads.stream().filter(el ->
+            el.getName().equals("reference") && el.getNamespace().equals("urn:xmpp:reference:0") &&
+            el.findChild("media-sharing", "urn:xmpp:sims:1") != null
+        ).collect(Collectors.toList());
+    }
+
     public synchronized void resetFileParams() {
         this.fileParams = null;
+    }
+
+    public synchronized void setFileParams(FileParams fileParams) {
+        if (fileParams != null && this.fileParams != null && this.fileParams.sims != null && fileParams.sims == null) {
+            fileParams.sims = this.fileParams.sims;
+        }
+        this.fileParams = fileParams;
+        if (fileParams != null && getSims().isEmpty()) {
+            addPayload(fileParams.toSims());
+        }
     }
 
     public synchronized FileParams getFileParams() {
@@ -885,6 +905,41 @@ public class Message extends AbstractEntity implements AvatarService.Avatarable 
         public long getSize() {
             return size == null ? 0 : size;
         }
+		public Element sims = null;
+        public Element toSims() {
+            if (sims == null) sims = new Element("reference", "urn:xmpp:reference:0");
+            sims.setAttribute("type", "data");
+            Element mediaSharing = sims.findChild("media-sharing", "urn:xmpp:sims:1");
+            if (mediaSharing == null) mediaSharing = sims.addChild("media-sharing", "urn:xmpp:sims:1");
+
+            Element file = mediaSharing.findChild("file", "urn:xmpp:jingle:apps:file-transfer:5");
+            if (file == null) file = mediaSharing.findChild("file", "urn:xmpp:jingle:apps:file-transfer:4");
+            if (file == null) file = mediaSharing.findChild("file", "urn:xmpp:jingle:apps:file-transfer:3");
+            if (file == null) file = mediaSharing.addChild("file", "urn:xmpp:jingle:apps:file-transfer:5");
+
+            file.removeChild(file.findChild("size", file.getNamespace()));
+            if (size != null) file.addChild("size", file.getNamespace()).setContent(size.toString());
+
+            file.removeChild(file.findChild("width", "https://schema.org/"));
+            if (width > 0) file.addChild("width", "https://schema.org/").setContent(String.valueOf(width));
+
+            file.removeChild(file.findChild("height", "https://schema.org/"));
+            if (height > 0) file.addChild("height", "https://schema.org/").setContent(String.valueOf(height));
+
+            file.removeChild(file.findChild("duration", "https://schema.org/"));
+            if (runtime > 0) file.addChild("duration", "https://schema.org/").setContent("PT" + runtime + "S");
+
+            if (url != null) {
+                Element sources = mediaSharing.findChild("sources", mediaSharing.getNamespace());
+                if (sources == null) sources = mediaSharing.addChild("sources", mediaSharing.getNamespace());
+
+                Element source = sources.findChild("reference", "urn:xmpp:reference:0");
+                if (source == null) source = sources.addChild("reference", "urn:xmpp:reference:0");
+                source.setAttribute("type", "data");
+                source.setAttribute("uri", url);
+            }
+			return sims;
+		}
     }
 
     public void setFingerprint(String fingerprint) {
@@ -987,5 +1042,15 @@ public class Message extends AbstractEntity implements AvatarService.Avatarable 
         message.setTrueCounterpart(conversation.getMucOptions().getTrueCounterpart(counterpart));
         message.setType(isFile ? Message.TYPE_PRIVATE_FILE : Message.TYPE_PRIVATE);
         return true;
+    }
+
+    public void clearPayloads() {
+        this.payloads.clear();
+    }
+
+    public void addPayload(Element el) {
+        if (el == null) return;
+
+        this.payloads.add(el);
     }
 }

@@ -18,6 +18,7 @@ public class Element {
     private final String name;
     private Hashtable<String, String> attributes = new Hashtable<>();
     private String content;
+	private List<Node> childNodes = new ArrayList<>();
     protected List<Element> children = new ArrayList<>();
 
     public Element(String name) {
@@ -34,6 +35,19 @@ public class Element {
         children.add(child);
         return child;
     }
+
+	public void removeChild(Element child) {
+		if (child == null) return;
+
+		this.childNodes.remove(child);
+		if (child instanceof Element) this.children.remove(child);
+	}
+
+	public Node addChild(Node child) {
+		childNodes.add(child);
+		if (child instanceof Element) children.add((Element) child);
+		return child;
+	}
 
     public Element addChild(String name) {
         this.content = null;
