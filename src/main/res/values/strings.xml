@@ -543,7 +543,7 @@
     <string name="share_uri_with">Share URI with…</string>
     <string name="welcome_header" translatable="false">Join the Conversation</string>
     <string name="welcome_header_quicksy" translatable="false">Prav - Reclaiming choice of service providers!</string>
-    <string name="welcome_text_quicksy_static" translatable="false"><![CDATA[Prav is a convenient messaging app without vendor lock-in!<br><br>You can login or sign-up using just your phone number and Prav will automatically suggest your contacts who are on Prav.<br>By signing up you agree to our <a href="https://quicksy.im/privacy.htm">Privacy Policy</a> and our <a href="https://quicksy.im/tos.htm">Terms &amp; Conditions</a>.]]></string>
+	<string name="welcome_text_quicksy_static" translatable="false"><![CDATA[Prav is a convenient messaging app without vendor lock-in!<br><br>You can login or sign-up using just your phone number and Prav will automatically suggest your contacts who are on Prav.<br>By signing up you agree to our <a href="https://prav.app/privacy-policy">Privacy Policy</a>.]]></string>
     <string name="agree_and_continue">Agree and continue</string>
     <string name="magic_create_text">A guide is set up for account creation on conversations.im.\nWhen picking conversations.im as a provider you will be able to communicate with users of other providers by giving them your full XMPP address.</string>
     <string name="your_full_jid_will_be">Your full XMPP address will be: %s</string>
