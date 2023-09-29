@@ -407,17 +407,21 @@ public class MessageParser extends AbstractParser implements OnMessagePacketRece
         }
         final Element mucUserElement = packet.findChild("x", Namespace.MUC_USER);
         final String pgpEncrypted = packet.findChildContent("x", "jabber:x:encrypted");
-        final Element replaceElement = packet.findChild("replace", "urn:xmpp:message-correct:0");
+        Element replaceElement = packet.findChild("replace", "urn:xmpp:message-correct:0");
         final Element oob = packet.findChild("x", Namespace.OOB);
         final String oobUrl = oob != null ? oob.findChildContent("url") : null;
         String replacementId = replaceElement == null ? null : replaceElement.getAttribute("id");
-        boolean replaceAsRetraction = false;
         if (replacementId == null) {
-            Element fasten = packet.findChild("apply-to", "urn:xmpp:fasten:0");
-            if (fasten != null && (fasten.findChild("retract", "urn:xmpp:message-retract:0") != null || fasten.findChild("moderated", "urn:xmpp:message-moderate:0") != null)) {
-                replacementId = fasten.getAttribute("id");
-                packet.setBody("");
-				replaceAsRetraction = true;
+            final Element fasten = packet.findChild("apply-to", "urn:xmpp:fasten:0");
+            if (fasten != null) {
+                replaceElement = fasten.findChild("retract", "urn:xmpp:message-retract:0");
+                if (replaceElement == null) replaceElement = fasten.findChild("moderated", "urn:xmpp:message-moderate:0");
+                if (replaceElement != null) {
+                    final String reason = replaceElement.findChildContent("reason", "urn:xmpp:message-moderate:0");
+                    replacementId = fasten.getAttribute("id");
+                    packet.setBody(reason == null ? "" : reason);
+                }
+
             }
         }
         final LocalizedContent body = packet.getBody();
@@ -643,12 +647,13 @@ public class MessageParser extends AbstractParser implements OnMessagePacketRece
                             replacedMessage.setBody(message.getBody());
                             replacedMessage.putEdited(replacedMessage.getRemoteMsgId(), replacedMessage.getServerMsgId());
                             replacedMessage.setRemoteMsgId(remoteMsgId);
-                            if (replaceAsRetraction) {
+                            if (!replaceElement.getName().equals("replace")) {
                                 mXmppConnectionService.getFileBackend().deleteFile(replacedMessage);
                                 mXmppConnectionService.evictPreview(message.getUuid());
                                 replacedMessage.clearPayloads();
                                 replacedMessage.setFileParams(null);
                                 replacedMessage.setDeleted(true);
+                                replacedMessage.addPayload(replaceElement);
                             }
                             if (replacedMessage.getServerMsgId() == null || message.getServerMsgId() != null) {
                                 replacedMessage.setServerMsgId(message.getServerMsgId());
@@ -677,7 +682,7 @@ public class MessageParser extends AbstractParser implements OnMessagePacketRece
                     } else {
                         Log.d(Config.LOGTAG, account.getJid().asBareJid() + ": received message correction but verification didn't check out");
                     }
-                } else if (replaceAsRetraction) {
+                } else if (message.getBody() == null || message.getBody().equals("") || message.getBody().equals(" ")) {
                     return;
                 }
             }
