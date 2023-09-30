@@ -79,7 +79,7 @@
                 android:layout_toLeftOf="@+id/textSendButton"
                 android:layout_toEndOf="@+id/recordVoiceButton"
                 android:layout_toRightOf="@+id/recordVoiceButton"
-                android:background="@drawable/message_bubble_sent"
+                android:background="?attr/color_background_primary"
                 android:orientation="vertical">
 
             <TextView
