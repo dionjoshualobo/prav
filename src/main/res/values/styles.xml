@@ -158,5 +158,11 @@
 
     <style name="TextAppearance.Conversations.Body1.Secondary.OnDark" parent="TextAppearance.Conversations.Body1">
         <item name="android:textColor">@color/white70</item>
-    </style>
+	</style>
+
+	<style name="fab_square" parent="">
+    	<item name="cornerFamily">rounded</item>
+		<item name="cornerSize">0dp</item>
+		<item name="cornerSize">30%</item>
+	</style>
 </resources>
