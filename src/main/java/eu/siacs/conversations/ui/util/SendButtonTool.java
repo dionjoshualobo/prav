@@ -84,12 +84,9 @@ public class SendButtonTool {
 		switch (status) {
 			case CHAT:
 			case ONLINE:
-				return R.drawable.ic_send_text_online;
 			case AWAY:
-				return R.drawable.ic_send_text_away;
 			case XA:
 			case DND:
-				return R.drawable.ic_send_text_dnd;
 		}
 		return getThemeResource(activity, R.attr.ic_send_text_offline, R.drawable.ic_send_text_offline);
 	}

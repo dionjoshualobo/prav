@@ -521,6 +521,7 @@ public class ConversationFragment extends XmppFragment
                     setSelection(binding.messagesView.getCount() - 1, true);
                 }
             };
+    private final OnClickListener mRecordVoiceButtonListener = v -> attachFile(ATTACHMENT_CHOICE_RECORD_VOICE);
     private final OnClickListener mSendButtonListener =
             new OnClickListener() {
 
@@ -1216,6 +1217,7 @@ public class ConversationFragment extends XmppFragment
         binding.textinput.setRichContentListener(new String[] {"image/*"}, mEditorContentListener);
 
         binding.textSendButton.setOnClickListener(this.mSendButtonListener);
+        binding.recordVoiceButton.setOnClickListener(this.mRecordVoiceButtonListener);
 
         binding.scrollToBottomButton.setOnClickListener(this.mScrollButtonListener);
         binding.messagesView.setOnScrollListener(mOnScrollListener);
