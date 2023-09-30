@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -23,19 +24,16 @@
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
 
-                <FrameLayout
-                    android:id="@+id/account_image_wrapper"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginTop="@dimen/publish_avatar_top_margin"
-                    android:background="@drawable/account_image_border">
-
-                    <ImageView
-                        android:id="@+id/account_image"
-                        android:layout_width="@dimen/publish_avatar_size"
-                        android:layout_height="@dimen/publish_avatar_size"/>
-                </FrameLayout>
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/account_image"
+                    android:layout_width="@dimen/publish_avatar_size"
+                    android:layout_height="94dp"
+                    android:layout_margin="10dp"
+                	android:background="@drawable/account_image_border"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/fab_square" />
 
                 <TextView
                     android:id="@+id/hint"
