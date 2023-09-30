@@ -1,0 +1,5 @@
+- Get a better colourscheme
+- Dark/Light mode based on system preference
+- Allow language to be set during first setup
+- Allow backup restore 
+- Custom BGs for groups (backport from monocles I guess)
