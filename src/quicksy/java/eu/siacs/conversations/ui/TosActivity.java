@@ -9,6 +9,7 @@ import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.widget.Button;
 import android.widget.TextView;
+import android.net.Uri;
 
 import androidx.appcompat.app.ActionBar;
 
@@ -57,6 +58,7 @@ public class TosActivity extends XmppActivity {
             ab.setDisplayHomeAsUpEnabled(false);
         }
         final Button agreeButton = findViewById(R.id.agree);
+        final Button changeLangButton = findViewById(R.id.langchange);
         final TextView welcomeText = findViewById(R.id.welcome_text);
         agreeButton.setOnClickListener(v -> {
             final Intent intent = new Intent(this, EnterPhoneNumberActivity.class);
@@ -65,6 +67,13 @@ public class TosActivity extends XmppActivity {
             addInviteUri(intent);
             startActivity(intent);
             finish();
+        });
+        changeLangButton.setOnClickListener(v -> {
+            //startActivityForResult(new Intent(android.provider.Settings.ACTION_APP_LOCALE_SETTINGS), 0);
+    		// Specify the action and the settings page you want to open
+    		Intent intent = new Intent(android.provider.Settings.ACTION_APP_LOCALE_SETTINGS);
+    		intent.setData(Uri.parse("package:" + getPackageName()));
+        	startActivity(intent);
         });
         welcomeText.setText(Html.fromHtml(getString(R.string.welcome_text_quicksy_static)));
         welcomeText.setMovementMethod(LinkMovementMethod.getInstance());
