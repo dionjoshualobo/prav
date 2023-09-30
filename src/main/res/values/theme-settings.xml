@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-    <string name="theme">light</string>
-    <string-array name="themes">
+    <string name="theme">automatic</string>
+    <string-array name="themes" tools:ignore="InconsistentArrays">
+        <item>@string/pref_theme_automatic</item>
         <item>@string/pref_theme_light</item>
         <item>@string/pref_theme_dark</item>
     </string-array>
-    <string-array name="themes_values">
+    <string-array name="themes_values" tools:ignore="InconsistentArrays">
+        <item>automatic</item>
 		<item>light</item>
 		<item>dark</item>
 	</string-array>

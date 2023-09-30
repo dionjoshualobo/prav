@@ -1,5 +1,4 @@
 - Get a better colourscheme
-- Dark/Light mode based on system preference
 - Allow backup restore 
 - Custom BGs for groups (backport from monocles I guess)
 - Receipts in main page (backport from monocles)
