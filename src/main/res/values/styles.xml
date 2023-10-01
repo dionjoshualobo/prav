@@ -165,4 +165,13 @@
 		<item name="cornerSize">0dp</item>
 		<item name="cornerSize">30%</item>
 	</style>
+	<style name="fab_circle" parent="">
+    	<item name="cornerFamily">rounded</item>
+		<item name="cornerSize">0dp</item>
+		<item name="cornerSize">50%</item>
+	</style>
+    <style name="TextAppearance.Conversations.Body1.Name" parent="TextAppearance.Conversations.Body1">
+		<item name="android:textColor">?attr/colorPrimary</item>
+		<item name="android:textStyle">bold</item>
+    </style>
 </resources>

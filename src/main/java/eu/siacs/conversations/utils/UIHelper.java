@@ -1,10 +1,15 @@
 package eu.siacs.conversations.utils;
 
 import android.content.Context;
+import android.text.Spannable;
+import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.format.DateFormat;
 import android.text.format.DateUtils;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.StyleSpan;
 import android.util.Pair;
+import android.graphics.Typeface;
 
 import androidx.annotation.ColorInt;
 
@@ -34,6 +39,7 @@ import eu.siacs.conversations.entities.Transferable;
 import eu.siacs.conversations.services.ExportBackupService;
 import eu.siacs.conversations.ui.util.QuoteHelper;
 import eu.siacs.conversations.xmpp.Jid;
+import eu.siacs.conversations.services.XmppConnectionService;
 
 public class UIHelper {
 
@@ -610,5 +616,13 @@ public class UIHelper {
         } else {
             return size + " B";
         }
+    }
+
+    public static SpannableString getColoredUsername(final XmppConnectionService service, final Message message) {
+        final SpannableString user;
+        user = SpannableString.valueOf(UIHelper.getMessageDisplayName(message));
+        user.setSpan(new StyleSpan(Typeface.BOLD), 0, user.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        user.setSpan(new ForegroundColorSpan(message.getAvatarBackgroundColor()), 0, user.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        return user;
     }
 }

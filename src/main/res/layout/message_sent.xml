@@ -19,12 +19,12 @@
         android:layout_alignParentBottom="true"
         android:orientation="vertical">
 
-        <com.makeramen.roundedimageview.RoundedImageView
-            android:id="@+id/message_photo"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:scaleType="fitXY"
-            app:riv_corner_radius="6dp" />
+    	<com.google.android.material.imageview.ShapeableImageView
+        	android:id="@+id/message_photo"
+        	android:layout_width="48dp"
+        	android:layout_height="48dp"
+        	android:scaleType="fitXY"
+			app:shapeAppearanceOverlay="@style/fab_circle" />
 
         <View
             android:id="@+id/placeholder"

@@ -62,7 +62,7 @@
                             android:layout_alignParentLeft="true"
                             android:text="@string/me"
                             android:layout_marginRight="?attr/TextSeparation"
-                            android:textAppearance="@style/TextAppearance.Conversations.Body1.Secondary"
+                            android:textAppearance="@style/TextAppearance.Conversations.Body1.Name"
                             android:visibility="visible" />
 
                         <LinearLayout

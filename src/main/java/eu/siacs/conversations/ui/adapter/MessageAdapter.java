@@ -69,6 +69,7 @@ import eu.siacs.conversations.utils.GeoHelper;
 import eu.siacs.conversations.utils.MessageUtils;
 import eu.siacs.conversations.utils.StylingHelper;
 import eu.siacs.conversations.utils.TimeFrameUtils;
+import eu.siacs.conversations.utils.ThemeHelper;
 import eu.siacs.conversations.utils.UIHelper;
 import eu.siacs.conversations.xmpp.Jid;
 import eu.siacs.conversations.xmpp.mam.MamReference;
@@ -188,6 +189,8 @@ public class MessageAdapter extends ArrayAdapter<Message> {
         final Transferable transferable = message.getTransferable();
         boolean multiReceived = message.getConversation().getMode() == Conversation.MODE_MULTI
                 && message.getMergedStatus() <= Message.STATUS_RECEIVED;
+        boolean singleReceived = message.getConversation().getMode() == Conversation.MODE_SINGLE
+                && message.getMergedStatus() <= Message.STATUS_RECEIVED;
         if (message.isFileOrImage() || transferable != null || MessageUtils.unInitiatedButKnownSize(message)) {
             FileParams params = message.getFileParams();
             filesize = params.size != null ? UIHelper.filesizeToString(params.size) : null;
@@ -240,9 +243,14 @@ public class MessageAdapter extends ArrayAdapter<Message> {
                 break;
             default:
                 if (mForceNames || multiReceived) {
-                    info = UIHelper.getMessageDisplayName(message);
-                }
-                break;
+                    final int shadowSize = 10;
+                    viewHolder.username.setVisibility(View.VISIBLE);
+                    viewHolder.username.setText(UIHelper.getColoredUsername(activity.xmppConnectionService, message));
+                    viewHolder.username.setPadding(4, 2, 4, 2);
+                } else if (singleReceived) {
+                    viewHolder.username.setVisibility(View.GONE);
+				}
+				break;
         }
         if (error && type == SENT) {
             if (darkBackground) {
@@ -430,7 +438,7 @@ public class MessageAdapter extends ArrayAdapter<Message> {
         viewHolder.messageBody.setTypeface(null, Typeface.NORMAL);
 
         if (message.getBody() != null) {
-            final String nick = UIHelper.getMessageDisplayName(message);
+            final SpannableString nick = UIHelper.getColoredUsername(activity.xmppConnectionService, message);
             SpannableStringBuilder body = message.getMergedBody();
             boolean hasMeCommand = message.hasMeCommand();
             if (hasMeCommand) {
@@ -638,6 +646,7 @@ public class MessageAdapter extends ArrayAdapter<Message> {
                     view = activity.getLayoutInflater().inflate(R.layout.message_sent, parent, false);
                     viewHolder.message_box = view.findViewById(R.id.message_box);
                     viewHolder.contact_picture = view.findViewById(R.id.message_photo);
+                    viewHolder.username = view.findViewById(R.id.username);
                     viewHolder.download_button = view.findViewById(R.id.download_button);
                     viewHolder.indicator = view.findViewById(R.id.security_indicator);
                     viewHolder.edit_indicator = view.findViewById(R.id.edit_indicator);
@@ -651,6 +660,7 @@ public class MessageAdapter extends ArrayAdapter<Message> {
                     view = activity.getLayoutInflater().inflate(R.layout.message_received, parent, false);
                     viewHolder.message_box = view.findViewById(R.id.message_box);
                     viewHolder.contact_picture = view.findViewById(R.id.message_photo);
+                    viewHolder.username = view.findViewById(R.id.username);
                     viewHolder.download_button = view.findViewById(R.id.download_button);
                     viewHolder.indicator = view.findViewById(R.id.security_indicator);
                     viewHolder.edit_indicator = view.findViewById(R.id.edit_indicator);
@@ -923,6 +933,7 @@ public class MessageAdapter extends ArrayAdapter<Message> {
         protected ImageView indicatorReceived;
         protected TextView time;
         protected TextView messageBody;
+		protected TextView username;
         protected ImageView contact_picture;
         protected TextView status_message;
         protected TextView encryption;
