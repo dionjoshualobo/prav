@@ -1,5 +1,5 @@
 - Get a better colourscheme
-- Allow backup restore 
+- Allow backup restore (plus automatic backups)
 - Custom BGs for groups (backport from monocles I guess)
 - Receipts in main page (backport from monocles)
 - Use logo instead of Prav text in main page
