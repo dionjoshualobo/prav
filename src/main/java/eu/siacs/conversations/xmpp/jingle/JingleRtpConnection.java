@@ -15,6 +15,7 @@ import com.google.common.collect.Collections2;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import com.google.common.primitives.Ints;
 import com.google.common.util.concurrent.FutureCallback;
@@ -236,6 +237,9 @@ public class JingleRtpConnection extends AbstractJingleConnection
                 break;
             case CONTENT_REMOVE:
                 receiveContentRemove(jinglePacket);
+                break;
+            case CONTENT_MODIFY:
+                receiveContentModify(jinglePacket);
                 break;
             default:
                 respondOk(jinglePacket);
@@ -499,12 +503,45 @@ public class JingleRtpConnection extends AbstractJingleConnection
             sendSessionTerminate(Reason.FAILED_APPLICATION, cause.getMessage());
             return;
         }
+        processCandidates(receivedContentAccept.contents.entrySet());
         updateEndUserState();
         Log.d(
                 Config.LOGTAG,
                 id.getAccount().getJid().asBareJid()
                         + ": remote has accepted content-add "
                         + ContentAddition.summary(receivedContentAccept));
+    }
+
+    private void receiveContentModify(final JinglePacket jinglePacket) {
+        final Map<String, Content.Senders> modification =
+                Maps.transformEntries(
+                        jinglePacket.getJingleContents(), (key, value) -> value.getSenders());
+        respondOk(jinglePacket);
+        final RtpContentMap currentOutgoing = this.outgoingContentAdd;
+        final Set<String> currentOutgoingMediaIds = currentOutgoing == null ? Collections.emptySet() : currentOutgoing.contents.keySet();
+        Log.d(Config.LOGTAG, "receiveContentModification(" + modification + ")");
+        if (currentOutgoing != null && currentOutgoingMediaIds.containsAll(modification.keySet())) {
+            final boolean isInitiator = isInitiator();
+            final RtpContentMap modifiedContentMap;
+            try {
+                modifiedContentMap = currentOutgoing.modifiedSendersChecked(isInitiator, modification);
+            } catch (final IllegalArgumentException e) {
+                webRTCWrapper.close();
+                sendSessionTerminate(Reason.FAILED_APPLICATION, e.getMessage());
+                return;
+            }
+            this.outgoingContentAdd = modifiedContentMap;
+            Log.d(Config.LOGTAG, id.account.getJid().asBareJid()+": processed content-modification for pending content-add");
+        } else {
+            webRTCWrapper.close();
+            sendSessionTerminate(
+                    Reason.FAILED_APPLICATION,
+                    String.format(
+                            "%s only supports %s as a means to modify a not yet accepted %s",
+                            BuildConfig.APP_NAME,
+                            JinglePacket.Action.CONTENT_MODIFY,
+                            JinglePacket.Action.CONTENT_ADD));
+        }
     }
 
     private void receiveContentReject(final JinglePacket jinglePacket) {
@@ -601,7 +638,7 @@ public class JingleRtpConnection extends AbstractJingleConnection
                             "%s only supports %s as a means to retract a not yet accepted %s",
                             BuildConfig.APP_NAME,
                             JinglePacket.Action.CONTENT_REMOVE,
-                            JinglePacket.Action.CONTENT_ACCEPT));
+                            JinglePacket.Action.CONTENT_ADD));
         }
     }
 
@@ -729,6 +766,7 @@ public class JingleRtpConnection extends AbstractJingleConnection
                             + ContentAddition.summary(contentAcceptMap));
             modifyLocalContentMap(rtpContentMap);
             sendContentAccept(contentAcceptMap);
+            this.webRTCWrapper.setIsReadyToReceiveIceCandidates(true);
         } catch (final Exception e) {
             Log.d(Config.LOGTAG, "unable to accept content add", Throwables.getRootCause(e));
             webRTCWrapper.close();
@@ -783,6 +821,8 @@ public class JingleRtpConnection extends AbstractJingleConnection
         // ICE-restart
         // and if that's the case we are seeing an answer.
         // This might be more spec compliant but also more error prone potentially
+        final boolean isSignalStateStable = this.webRTCWrapper.getSignalingState() == PeerConnection.SignalingState.STABLE;
+        // TODO a stable signal state can be another indicator that we have an offer to restart ICE
         final boolean isOffer = rtpContentMap.emptyCandidates();
         final RtpContentMap restartContentMap;
         try {
@@ -862,7 +902,6 @@ public class JingleRtpConnection extends AbstractJingleConnection
         webRTCWrapper.setRemoteDescription(sdp).get();
         setRemoteContentMap(restartContentMap);
         if (isOffer) {
-            webRTCWrapper.setIsReadyToReceiveIceCandidates(false);
             final SessionDescription localSessionDescription = setLocalSessionDescription();
             setLocalContentMap(RtpContentMap.of(localSessionDescription, isInitiator()));
             // We need to respond OK before sending any candidates
@@ -1377,6 +1416,7 @@ public class JingleRtpConnection extends AbstractJingleConnection
                         id.account.getJid().asBareJid()
                                 + ": unable to transition to accept because already in state="
                                 + this.state);
+                Log.d(Config.LOGTAG, id.account.getJid() + ": received accept from " + from);
             }
         } else {
             Log.d(
@@ -1504,7 +1544,9 @@ public class JingleRtpConnection extends AbstractJingleConnection
             }
             this.message.setTime(timestamp);
             startRinging();
-            sendJingleMessage("ringing");
+            if (xmppConnectionService.confirmMessages() && id.getContact().showInContactList()) {
+                sendJingleMessage("ringing");
+            }
         } else {
             Log.d(
                     Config.LOGTAG,
@@ -2351,7 +2393,7 @@ public class JingleRtpConnection extends AbstractJingleConnection
 
     private void restartIce() {
         this.stateHistory.clear();
-        this.webRTCWrapper.restartIce();
+        this.webRTCWrapper.restartIceAsync();
     }
 
     @Override
@@ -2470,6 +2512,7 @@ public class JingleRtpConnection extends AbstractJingleConnection
                         handleIqTimeoutResponse(response);
                     }
                 });
+        this.webRTCWrapper.setIsReadyToReceiveIceCandidates(true);
     }
 
     private void setLocalContentMap(final RtpContentMap rtpContentMap) {
@@ -2643,7 +2686,7 @@ public class JingleRtpConnection extends AbstractJingleConnection
                                         // STUN URLs do not support a query section since M110
                                         final String uri;
                                         if (Arrays.asList("stun","stuns").contains(type)) {
-                                            uri = String.format("%s:%s%s", type, IP.wrapIPv6(host),port);
+                                            uri = String.format("%s:%s:%s", type, IP.wrapIPv6(host),port);
                                         } else {
                                             uri = String.format(
                                                     "%s:%s:%s?transport=%s",

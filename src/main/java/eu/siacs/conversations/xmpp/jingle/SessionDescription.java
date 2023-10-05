@@ -11,15 +11,17 @@ import com.google.common.base.Strings;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ImmutableList;
 
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-
 import eu.siacs.conversations.Config;
 import eu.siacs.conversations.xml.Namespace;
 import eu.siacs.conversations.xmpp.jingle.stanzas.Group;
 import eu.siacs.conversations.xmpp.jingle.stanzas.IceUdpTransportInfo;
 import eu.siacs.conversations.xmpp.jingle.stanzas.RtpDescription;
+
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 
 public class SessionDescription {
 
@@ -27,7 +29,8 @@ public class SessionDescription {
     private static final String HARDCODED_MEDIA_PROTOCOL =
             "UDP/TLS/RTP/SAVPF"; // probably only true for DTLS-SRTP aka when we have a fingerprint
     private static final int HARDCODED_MEDIA_PORT = 9;
-    private static final String HARDCODED_ICE_OPTIONS = "trickle";
+    private static final Collection<String> HARDCODED_ICE_OPTIONS =
+            Collections.singleton("trickle");
     private static final String HARDCODED_CONNECTION = "IN IP4 0.0.0.0";
 
     public final int version;
@@ -128,7 +131,8 @@ public class SessionDescription {
         return sessionDescriptionBuilder.createSessionDescription();
     }
 
-    public static SessionDescription of(final RtpContentMap contentMap, final boolean isInitiatorContentMap) {
+    public static SessionDescription of(
+            final RtpContentMap contentMap, final boolean isInitiatorContentMap) {
         final SessionDescriptionBuilder sessionDescriptionBuilder = new SessionDescriptionBuilder();
         final ArrayListMultimap<String, String> attributeMap = ArrayListMultimap.create();
         final ImmutableList.Builder<Media> mediaListBuilder = new ImmutableList.Builder<>();
@@ -166,11 +170,21 @@ public class SessionDescription {
             }
             checkNoWhitespace(pwd, "pwd value must not contain any whitespaces");
             mediaAttributes.put("ice-pwd", pwd);
-            mediaAttributes.put("ice-options", HARDCODED_ICE_OPTIONS);
+            final List<String> negotiatedIceOptions = transport.getIceOptions();
+            final Collection<String> iceOptions =
+                    negotiatedIceOptions.isEmpty() ? HARDCODED_ICE_OPTIONS : negotiatedIceOptions;
+            mediaAttributes.put("ice-options", Joiner.on(' ').join(iceOptions));
             final IceUdpTransportInfo.Fingerprint fingerprint = transport.getFingerprint();
             if (fingerprint != null) {
-                mediaAttributes.put(
-                        "fingerprint", fingerprint.getHash() + " " + fingerprint.getContent());
+                final String hashFunction = fingerprint.getHash();
+                final String hash = fingerprint.getContent();
+                if (Strings.isNullOrEmpty(hashFunction) || Strings.isNullOrEmpty(hash)) {
+                    throw new IllegalArgumentException("DTLS-SRTP missing hash");
+                }
+                checkNoWhitespace(
+                        hashFunction, "DTLS-SRTP hash function must not contain whitespace");
+                checkNoWhitespace(hash, "DTLS-SRTP hash must not contain whitespace");
+                mediaAttributes.put("fingerprint", hashFunction + " " + hash);
                 final IceUdpTransportInfo.Setup setup = fingerprint.getSetup();
                 if (setup != null) {
                     mediaAttributes.put("setup", setup.toString().toLowerCase(Locale.ROOT));
@@ -207,12 +221,14 @@ public class SessionDescription {
                     }
                     checkNoWhitespace(
                             type, "feedback negotiation type must not contain whitespace");
-                    mediaAttributes.put(
-                            "rtcp-fb",
-                            id
-                                    + " "
-                                    + type
-                                    + (Strings.isNullOrEmpty(subtype) ? "" : " " + subtype));
+                    if (Strings.isNullOrEmpty(subtype)) {
+                        mediaAttributes.put("rtcp-fb", id + " " + type);
+                    } else {
+                        checkNoWhitespace(
+                                subtype,
+                                "feedback negotiation subtype must not contain whitespace");
+                        mediaAttributes.put("rtcp-fb", id + " " + type + " " + subtype);
+                    }
                 }
                 for (RtpDescription.FeedbackNegotiationTrrInt feedbackNegotiationTrrInt :
                         payloadType.feedbackNegotiationTrrInts()) {
@@ -229,9 +245,13 @@ public class SessionDescription {
                     throw new IllegalArgumentException("a feedback negotiation is missing type");
                 }
                 checkNoWhitespace(type, "feedback negotiation type must not contain whitespace");
-                mediaAttributes.put(
-                        "rtcp-fb",
-                        "* " + type + (Strings.isNullOrEmpty(subtype) ? "" : " " + subtype));
+                if (Strings.isNullOrEmpty(subtype)) {
+                    mediaAttributes.put("rtcp-fb", "* " + type);
+                } else {
+                    checkNoWhitespace(
+                            subtype, "feedback negotiation subtype must not contain whitespace");
+                    mediaAttributes.put("rtcp-fb", "* " + type + " " + subtype); /**/
+                }
             }
             for (final RtpDescription.FeedbackNegotiationTrrInt feedbackNegotiationTrrInt :
                     description.feedbackNegotiationTrrInts()) {
@@ -268,6 +288,9 @@ public class SessionDescription {
                 if (groups.size() == 0) {
                     throw new IllegalArgumentException("A SSRC group is missing SSRC ids");
                 }
+                for (final String source : groups) {
+                    checkNoWhitespace(source, "Sources must not contain whitespace");
+                }
                 mediaAttributes.put(
                         "ssrc-group",
                         String.format("%s %s", semantics, Joiner.on(' ').join(groups)));
@@ -291,13 +314,21 @@ public class SessionDescription {
                         throw new IllegalArgumentException(
                                 "A source specific media attribute is missing its value");
                     }
-                    mediaAttributes.put("ssrc", id + " " + parameterName + ":" + parameterValue.trim());
+                    checkNoWhitespace(
+                            parameterName,
+                            "A source specific media attribute name not not contain whitespace");
+                    checkNoNewline(
+                            parameterValue,
+                            "A source specific media attribute value must not contain new lines");
+                    mediaAttributes.put(
+                            "ssrc", id + " " + parameterName + ":" + parameterValue.trim());
                 }
             }
 
             mediaAttributes.put("mid", name);
 
-            mediaAttributes.put(descriptionTransport.senders.asMediaAttribute(isInitiatorContentMap), "");
+            mediaAttributes.put(
+                    descriptionTransport.senders.asMediaAttribute(isInitiatorContentMap), "");
             if (description.hasChild("rtcp-mux", Namespace.JINGLE_APPS_RTP) || group != null) {
                 mediaAttributes.put("rtcp-mux", "");
             }
@@ -324,6 +355,13 @@ public class SessionDescription {
 
     public static String checkNoWhitespace(final String input, final String message) {
         if (CharMatcher.whitespace().matchesAnyOf(input)) {
+            throw new IllegalArgumentException(message);
+        }
+        return input;
+    }
+
+    public static String checkNoNewline(final String input, final String message) {
+        if (CharMatcher.anyOf("\r\n").matchesAnyOf(message)) {
             throw new IllegalArgumentException(message);
         }
         return input;

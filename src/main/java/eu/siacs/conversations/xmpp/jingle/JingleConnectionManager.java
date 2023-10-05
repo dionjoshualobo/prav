@@ -73,7 +73,7 @@ public class JingleConnectionManager extends AbstractConnectionManager {
     static String nextRandomId() {
         final byte[] id = new byte[16];
         new SecureRandom().nextBytes(id);
-        return Base64.encodeToString(id, Base64.NO_WRAP | Base64.NO_PADDING);
+        return Base64.encodeToString(id, Base64.NO_WRAP | Base64.NO_PADDING | Base64.URL_SAFE);
     }
 
     public void deliverPacket(final Account account, final JinglePacket packet) {
@@ -158,6 +158,21 @@ public class JingleConnectionManager extends AbstractConnectionManager {
         }
     }
 
+    public boolean hasJingleRtpConnection(final Account account) {
+        for (AbstractJingleConnection connection : this.connections.values()) {
+            if (connection instanceof JingleRtpConnection) {
+                final JingleRtpConnection rtpConnection = (JingleRtpConnection) connection;
+                if (rtpConnection.isTerminated()) {
+                    continue;
+                }
+                if (rtpConnection.id.account == account) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     public void notifyPhoneCallStarted() {
         for (AbstractJingleConnection connection : connections.values()) {
             if (connection instanceof JingleRtpConnection) {
@@ -169,6 +184,7 @@ public class JingleConnectionManager extends AbstractConnectionManager {
             }
         }
     }
+
 
     private Optional<RtpSessionProposal> findMatchingSessionProposal(
             final Account account, final Jid with, final Set<Media> media) {
@@ -486,7 +502,7 @@ public class JingleConnectionManager extends AbstractConnectionManager {
         } else {
             Log.d(
                     Config.LOGTAG,
-                    account.getJid().asBareJid()
+                    account.getJid()
                             + ": retrieved out of order jingle message from "
                             + from
                             + message
