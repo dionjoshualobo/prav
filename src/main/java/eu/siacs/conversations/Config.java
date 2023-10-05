@@ -41,7 +41,7 @@ public final class Config {
 
     public static final String LOGTAG = BuildConfig.APP_NAME.toLowerCase(Locale.US);
 
-    public static final Jid BUG_REPORTS = Jid.of("prav@fsci.in");
+    public static final Jid BUG_REPORTS = Jid.of("arya@projectsegfau.lt");
     public static final Uri HELP = Uri.parse("https://prav.app/about#contact");
 
 
