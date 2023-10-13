@@ -34,7 +34,7 @@ public final class Namespace {
     public static final String CARBONS = "urn:xmpp:carbons:2";
     public static final String BOOKMARKS_CONVERSION = "urn:xmpp:bookmarks-conversion:0";
     public static final String BOOKMARKS = "storage:bookmarks";
-    public static final String SYNCHRONIZATION = "app.prav.synchronization:0";
+    public static final String SYNCHRONIZATION = "im.quicksy.synchronization:0";
     public static final String AVATAR_DATA = "urn:xmpp:avatar:data";
     public static final String AVATAR_METADATA =  "urn:xmpp:avatar:metadata";
     public static final String AVATAR_CONVERSION = "urn:xmpp:pep-vcard-conversion:0";
