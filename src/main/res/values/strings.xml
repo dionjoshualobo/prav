@@ -420,6 +420,7 @@
     <string name="multimedia_file">multimedia file</string>
     <string name="pdf_document">PDF document</string>
     <string name="apk">Android App</string>
+    <string name="audiobook">Audiobook</string>
     <string name="vcard">Contact</string>
     <string name="avatar_has_been_published">Avatar has been published!</string>
     <string name="sending_x_file">Sending %s</string>
@@ -587,6 +588,7 @@
     <string name="type_web">Web browser</string>
     <string name="type_console">Console</string>
     <string name="payment_required">Payment required</string>
+    <string name="reconnect_on_other_host">Reconnect on other host</string>
     <string name="missing_internet_permission">Grant permission to use the Internet</string>
     <string name="me">Me</string>
     <string name="contact_asks_for_presence_subscription">Contact asks for presence subscription</string>

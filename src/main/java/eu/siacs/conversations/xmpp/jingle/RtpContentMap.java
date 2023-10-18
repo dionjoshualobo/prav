@@ -23,7 +23,7 @@ import eu.siacs.conversations.xmpp.jingle.stanzas.OmemoVerifiedIceUdpTransportIn
 import eu.siacs.conversations.xmpp.jingle.stanzas.RtpDescription;
 
 import java.util.Collection;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -274,6 +274,11 @@ public class RtpContentMap {
         return count == 0;
     }
 
+    public boolean hasFullTransportInfo() {
+        return Collections2.transform(this.contents.values(), dt -> dt.transport.isStub())
+                .contains(false);
+    }
+
     public RtpContentMap modifiedCredentials(
             IceUdpTransportInfo.Credentials credentials, final IceUdpTransportInfo.Setup setup) {
         final ImmutableMap.Builder<String, DescriptionTransport> contentMapBuilder =
@@ -353,12 +358,7 @@ public class RtpContentMap {
 
     public RtpContentMap toContentModification(final Collection<String> modifications) {
         return new RtpContentMap(
-                this.group,
-                Maps.transformValues(
-                        Maps.filterKeys(contents, Predicates.in(modifications)),
-                        dt ->
-                                new DescriptionTransport(
-                                        dt.senders, dt.description, IceUdpTransportInfo.STUB)));
+                this.group, Maps.filterKeys(contents, Predicates.in(modifications)));
     }
 
     public RtpContentMap toStub() {
@@ -395,42 +395,48 @@ public class RtpContentMap {
     }
 
     public RtpContentMap addContent(
-            final RtpContentMap modification, final IceUdpTransportInfo.Setup setup) {
-        final IceUdpTransportInfo.Credentials credentials = getDistinctCredentials();
-        final Collection<String> iceOptions = getCombinedIceOptions();
-        final DTLS dtls = getDistinctDtls();
+            final RtpContentMap modification, final IceUdpTransportInfo.Setup setupOverwrite) {
         final Map<String, DescriptionTransport> combined = merge(contents, modification.contents);
         final Map<String, DescriptionTransport> combinedFixedTransport =
                 Maps.transformValues(
                         combined,
                         dt -> {
                             final IceUdpTransportInfo iceUdpTransportInfo;
-                            if (dt.transport.emptyCredentials()) {
+                            if (dt.transport.isStub()) {
+                                final IceUdpTransportInfo.Credentials credentials =
+                                        getDistinctCredentials();
+                                final Collection<String> iceOptions = getCombinedIceOptions();
+                                final DTLS dtls = getDistinctDtls();
                                 iceUdpTransportInfo =
                                         IceUdpTransportInfo.of(
                                                 credentials,
                                                 iceOptions,
-                                                setup,
+                                                setupOverwrite,
                                                 dtls.hash,
                                                 dtls.fingerprint);
                             } else {
+                                final IceUdpTransportInfo.Fingerprint fp =
+                                        dt.transport.getFingerprint();
+                                final IceUdpTransportInfo.Setup setup = fp.getSetup();
                                 iceUdpTransportInfo =
                                         IceUdpTransportInfo.of(
                                                 dt.transport.getCredentials(),
-                                                iceOptions,
-                                                setup,
-                                                dtls.hash,
-                                                dtls.fingerprint);
+                                                dt.transport.getIceOptions(),
+                                                setup == IceUdpTransportInfo.Setup.ACTPASS
+                                                        ? setupOverwrite
+                                                        : setup,
+                                                fp.getHash(),
+                                                fp.getContent());
                             }
                             return new DescriptionTransport(
                                     dt.senders, dt.description, iceUdpTransportInfo);
                         });
-        return new RtpContentMap(modification.group, combinedFixedTransport);
+        return new RtpContentMap(modification.group, ImmutableMap.copyOf(combinedFixedTransport));
     }
 
     private static Map<String, DescriptionTransport> merge(
             final Map<String, DescriptionTransport> a, final Map<String, DescriptionTransport> b) {
-        final Map<String, DescriptionTransport> combined = new HashMap<>();
+        final Map<String, DescriptionTransport> combined = new LinkedHashMap<>();
         combined.putAll(a);
         combined.putAll(b);
         return ImmutableMap.copyOf(combined);
