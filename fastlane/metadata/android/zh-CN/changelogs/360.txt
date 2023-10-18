@@ -1,1 +1,0 @@
-* 支持 ?register 和 ?register;preauth XMPP uri 参数

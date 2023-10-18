@@ -1,2 +1,0 @@
-* Ristrutturata l'interfaccia utente per l'accesso con certificato
-* Aggiunta la possibilità di fissare le chat in alto (aggiungi ai preferiti)

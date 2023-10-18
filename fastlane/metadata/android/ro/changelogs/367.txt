@@ -1,2 +1,0 @@
-* Repararea selecției de avatar pe unele dispozitive ce rulează Android 10
-* Repararea transferului de fișiere pentru fișiere mari

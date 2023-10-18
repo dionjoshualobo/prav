@@ -1,2 +1,0 @@
-* soporte para os axustes das notificacións por conversa
-* usar opus para as mensaxes de voz en Android 10

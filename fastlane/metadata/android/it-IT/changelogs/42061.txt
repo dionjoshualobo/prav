@@ -1,1 +1,0 @@
-* Rimossa la funzione di scoperta dei canali dalla versione di Google Play

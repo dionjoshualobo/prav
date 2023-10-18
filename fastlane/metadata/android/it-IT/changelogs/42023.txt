@@ -1,2 +1,0 @@
-* Corretto l'arresto anomalo durante il rendering di alcune citazioni
-* Corretto l'arresto anomalo nella schermata di benvenuto

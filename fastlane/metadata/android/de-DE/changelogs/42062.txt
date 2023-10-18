@@ -1,1 +1,0 @@
-* Öffnen von Sicherungsdateien (.ceb) im Dateimanager deaktiviert
