@@ -9,4 +9,5 @@
     <string name="action_contact_details">যোগাযোগের ঠিকানা</string>
     <string name="action_settings">সেটিংস</string>
     <string name="action_add">নতুন কথাবার্তা</string>
+    <string name="action_edit_contact">নাম সম্পাদনা করুন</string>
 </resources>
