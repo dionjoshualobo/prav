@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="action_settings">समायोजन</string>
+    <string name="action_accounts">खाता प्रबंधन</string>
+    <string name="action_account">खाता प्रबंधन</string>
+    <string name="action_end_conversation">बातचीत बंद करें</string>
+    <string name="action_edit_contact">नाम संपादित करें</string>
+    <string name="action_add_account">खाता जोडें</string>
+    <string name="action_muc_details">सामूहिक बातचीत विवरण</string>
+    <string name="action_contact_details">संपर्क विवरण</string>
+    <string name="action_add">नई बातचीत</string>
 </resources>
