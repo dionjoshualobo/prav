@@ -10,4 +10,5 @@
     <string name="unknown_security_error">Unknown security error.</string>
     <string name="timeout_while_connecting_to_server">Timeout while connecting to server.</string>
     <string name="change_language">Change language</string>
+    <string name="import_backup">Restore from Backup</string>
 </resources>

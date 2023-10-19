@@ -60,6 +60,20 @@
                         android:layout_weight="1">
 
                     <Button
+                    android:id="@+id/action_import_backup"
+                    style="@style/Widget.Conversations.Button.Borderless"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/import_backup"
+                    android:textColor="?colorAccent" />
+				</LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                    <Button
                     android:id="@+id/langchange"
                     style="@style/Widget.Conversations.Button.Borderless"
                     android:layout_width="100dp"

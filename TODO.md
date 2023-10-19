@@ -1,5 +1,4 @@
 - Get a better colourscheme
-- Allow backup restore (plus automatic backups)
 - Custom BGs for groups (backport from monocles I guess)
 - Receipts in main page (backport from monocles)
 - Use logo instead of Prav text in main page
@@ -12,3 +11,5 @@
 - Online/Offline indicator
 - Make delete from roster more visible
 - Long click on people for options in main page
+- Automatic backups
+- Show encryption passphrase (the randomly generated password quicksy makes when a user logs in) when backup is created

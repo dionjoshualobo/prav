@@ -17,6 +17,8 @@ import eu.siacs.conversations.R;
 
 public class TosActivity extends XmppActivity {
 
+    private static final int REQUEST_IMPORT_BACKUP = 0x63fb;
+
     @Override
     protected void refreshUiReal() {
 
@@ -59,6 +61,7 @@ public class TosActivity extends XmppActivity {
         }
         final Button agreeButton = findViewById(R.id.agree);
         final Button changeLangButton = findViewById(R.id.langchange);
+        final Button importBackupButton = findViewById(R.id.action_import_backup);
         final TextView welcomeText = findViewById(R.id.welcome_text);
         agreeButton.setOnClickListener(v -> {
             final Intent intent = new Intent(this, EnterPhoneNumberActivity.class);
@@ -69,11 +72,16 @@ public class TosActivity extends XmppActivity {
             finish();
         });
         changeLangButton.setOnClickListener(v -> {
-            //startActivityForResult(new Intent(android.provider.Settings.ACTION_APP_LOCALE_SETTINGS), 0);
     		// Specify the action and the settings page you want to open
     		Intent intent = new Intent(android.provider.Settings.ACTION_APP_LOCALE_SETTINGS);
     		intent.setData(Uri.parse("package:" + getPackageName()));
         	startActivity(intent);
+        });
+
+        importBackupButton.setOnClickListener(v -> {
+            if (hasStoragePermission(REQUEST_IMPORT_BACKUP)) {
+                startActivity(new Intent(this, ImportBackupActivity.class));
+            }
         });
         welcomeText.setText(Html.fromHtml(getString(R.string.welcome_text_quicksy_static)));
         welcomeText.setMovementMethod(LinkMovementMethod.getInstance());
