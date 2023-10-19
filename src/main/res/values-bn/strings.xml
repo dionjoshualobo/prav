@@ -1,2 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="channel_details">চ্যানেলের বিবরণ</string>
+    <string name="action_accounts">অ্যাকাউন্টগুলি পরিচালনা করুন</string>
+    <string name="action_account">অ্যাকাউন্টটি পরিচালনা করুন</string>
+    <string name="action_end_conversation">কথাবার্তা প্রস্থান করুণ</string>
+    <string name="action_add_account">অ্যাকাউন্ট অ্যাড করুণ</string>
+    <string name="action_muc_details">গ্রুপ চ্যাটের বিবরণ</string>
+    <string name="action_contact_details">যোগাযোগের ঠিকানা</string>
+    <string name="action_settings">সেটিংস</string>
+    <string name="action_add">নতুন কথাবার্তা</string>
+</resources>
