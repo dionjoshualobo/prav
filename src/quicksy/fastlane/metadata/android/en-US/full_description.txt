@@ -1,14 +1,9 @@
-Quicksy is a spin off of the popular Jabber/XMPP client Conversations with automatic contact discovery.
+Whether you want to text your friends and family, or to make calls, prav app makes it easy for you. It provides convenient onboarding and user-friendly interface.
 
-You sign up with your phone number and Quicksy will automatically—based on the phone numbers in your address book—suggest possible contacts to you.
+We believe privacy is a fundamental right and should be easily exercised by anyone.
 
-Under the hood Quicksy is a full-fledged Jabber client that lets you communicate with any user on any publicly federating server. Likewise users on Quicksy can be contacted from the outside simply by adding +phonenumber@quicksy.im to your contact list.
+With prav, your chats are private and only you can read them https://prav.app/privacy-policy/. It is based on XMPP protocol, so users can talk to any other XMPP users all over the world, without being locked-in to a service. 
 
-Aside from the contact sync the user interface is deliberately as close to Conversations as possible. This allows users to eventually migrate from Quicksy to Conversations without having to relearn how the app works.
+Prav's source code is available publicly under a free license, providing transparency and audatibility. We are backed by a cooperative society in India, leading to democratic decision making.
 
-Suggested contacts consists of other Quicksy users and regular Jabber/XMPP users who have entered their Jabber ID into the Quicksy Directory (https://quicksy.im/#get-listed).
-
-NOTE: To enter (https://quicksy.im/enter/) your Jabber ID in the Quicksy
-Directory an one time registration fee is required.
-
-Read the Privacy Policy (https://quicksy.im/#privacy) for more info.
+Learn more at https://prav.app.

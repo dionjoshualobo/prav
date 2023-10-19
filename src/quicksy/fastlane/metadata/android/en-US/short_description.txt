@@ -1,1 +1,1 @@
-Jabber/XMPP with Easy Entry and Easy Discovery
+Prav is a user-friendly messaging app for everyone with a focus on privacy and freedom.
