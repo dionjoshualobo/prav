@@ -86,4 +86,6 @@
     <string name="start_conversation">संभाषण सुरू करा</string>
     <string name="invite">आमंत्रित करा</string>
     <string name="title_activity_choose_contact">संपर्क निवडा</string>
+    <string name="title_activity_sharewith">संभाषणा सहत शेअर करा</string>
+    <string name="title_activity_settings">सेटिंग्ज</string>
 </resources>
