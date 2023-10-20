@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="action_settings">समायोजन</string>
-    <string name="action_accounts">खाता प्रबंधन</string>
+    <string name="action_settings">सेटिंग</string>
+    <string name="action_accounts">खातों का प्रबंधन</string>
     <string name="action_account">खाता प्रबंधन</string>
     <string name="action_end_conversation">बातचीत बंद करें</string>
     <string name="action_edit_contact">नाम संपादित करें</string>
@@ -9,4 +9,30 @@
     <string name="action_muc_details">सामूहिक बातचीत विवरण</string>
     <string name="action_contact_details">संपर्क विवरण</string>
     <string name="action_add">नई बातचीत</string>
+    <string name="minutes_ago">%d मिनटों पहले</string>
+    <string name="admin">व्यवस्थापक</string>
+    <string name="action_block_domain">डोमेन अवरुद्ध करें</string>
+    <string name="action_delete_contact">संपर्क से हटाएँ</string>
+    <string name="channel_details">चैनल विवरण</string>
+    <string name="action_block_contact">संपर्क अवरुद्ध करें</string>
+    <string name="action_unblock_domain">डोमेन अनवरुद्ध करें</string>
+    <string name="moderator">संचालक</string>
+    <string name="just_now">बस अभी</string>
+    <string name="action_unblock_contact">संपर्क अनवरुद्ध करें</string>
+    <string name="title_activity_start_conversation">बातचीत शुरू करें</string>
+    <string name="title_activity_share_via_account">खाते के माध्यम से साझा करें</string>
+    <string name="minute_ago">१ मिनट पहले</string>
+    <string name="title_activity_settings">सेटिंग</string>
+    <string name="title_activity_block_list">अवरोध सूची</string>
+    <string name="sending">भेजा जा रहा है…</string>
+    <string name="title_activity_manage_accounts">खातों का प्रबंधन</string>
+    <string name="action_block_participant">सहभागी अवरुद्ध करें</string>
+    <string name="action_add_phone_book">पता पुस्तिका में जोडें</string>
+    <string name="add">जोडें</string>
+    <string name="title_activity_choose_contacts">संपर्कों को चुनें</string>
+    <plurals name="x_unread_conversations">
+        <item quantity="one">%d अपठित बातचीत</item>
+        <item quantity="other">%d अपठित बातचीत</item>
+    </plurals>
+    <string name="title_activity_choose_contact">संपर्क चुने</string>
 </resources>
