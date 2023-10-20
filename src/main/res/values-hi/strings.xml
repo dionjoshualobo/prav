@@ -35,4 +35,33 @@
         <item quantity="other">%d अपठित बातचीत</item>
     </plurals>
     <string name="title_activity_choose_contact">संपर्क चुने</string>
+    <string name="visitor">दर्शक</string>
+    <string name="set"></string>
+    <string name="send_message">संदेश भेजें</string>
+    <string name="blocked">अवरुद्ध हो गया है</string>
+    <string name="unblock_contact_text">"क्या आप  %s को संदेश भेजने से अनवरुद्ध करना चाहते हैं\?"</string>
+    <string name="send_message_to_x">%s को संदेश भेजें</string>
+    <string name="delete_file_dialog">फाइल मिटाएँ</string>
+    <string name="unblock_domain_text">%s के सारे संपर्क अनवरुद्ध करें\?</string>
+    <string name="nick_in_use">उपनाम प्रयोग में है</string>
+    <string name="participant">सहभागी</string>
+    <string name="block">अवरुद्ध</string>
+    <string name="delete">मिटाएँ</string>
+    <string name="contacts">संपर्क</string>
+    <string name="block_domain_text">%s के सारे संपर्क अवरुद्ध करें\?</string>
+    <string name="contact">संपर्क</string>
+    <string name="add_contact">संपर्क जोड़ें</string>
+    <string name="action_unblock_participant">अवरोध हटाएँ</string>
+    <string name="block_contact_text">"क्या आप  %s को संदेश भेजने से अवरुद्ध करना चाहते हैं\?"</string>
+    <string name="invalid_muc_nick">अमान्य उपनाम</string>
+    <string name="invite_contact">संपर्क को आमंत्रित करें</string>
+    <string name="owner">मालिक</string>
+    <string name="cancel">रद्द करें</string>
+    <string name="send_now">अभी भेजें</string>
+    <string name="register_account">सर्वर पर नया खाता बनाएँ</string>
+    <string name="contact_blocked">संपर्क अवरुद्ध हो गया है</string>
+    <string name="change_password_on_server">सर्वर पर पासवर्ड बदलें</string>
+    <string name="unblock">अनवरुद्ध करें</string>
+    <string name="share_with">भेजें…</string>
+    <string name="invite">आमंत्रित करें</string>
 </resources>
