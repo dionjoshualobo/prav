@@ -36,7 +36,6 @@
     </plurals>
     <string name="title_activity_choose_contact">संपर्क चुने</string>
     <string name="visitor">दर्शक</string>
-    <string name="set"></string>
     <string name="send_message">संदेश भेजें</string>
     <string name="blocked">अवरुद्ध हो गया है</string>
     <string name="unblock_contact_text">"क्या आप  %s को संदेश भेजने से अनवरुद्ध करना चाहते हैं\?"</string>
