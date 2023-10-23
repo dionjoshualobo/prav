@@ -66,4 +66,5 @@
     <string name="save">सहेजें</string>
     <string name="set">सेट करें</string>
     <string name="ok">ठीक है</string>
+    <string name="remove_contact_text">क्या आप %s संपर्क सूची से हटाना चाहेंगे\? इस संपर्क से की हुई बातचीत नहीं हटाई जायेगी।</string>
 </resources>
