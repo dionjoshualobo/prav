@@ -110,4 +110,25 @@
     <string name="install">स्थापित करा</string>
     <string name="no_pgp_key">कोणतीही ओपनपीजीपी की आढळली नाही</string>
     <string name="send_pgp_message">ओपनपीजीपी एनक्रिप्टेड संदेश पाठवा</string>
+    <string name="pref_attachments">संलग्नके</string>
+    <string name="pref_ringtone">वलयध्वनी</string>
+    <string name="pref_notification_settings">सूचना</string>
+    <string name="contacts_have_no_pgp_keys">तुमचा संदेश एनक्रिप्ट करू शकलो नाही कारण तुमचे संपर्क त्यांच्या सार्वजनिक की घोषित करत नाहीत.
+\n
+\n<small>कृपया त्यांना ओपनपीजीपी सेट करण्यास सांगा.</small></string>
+    <string name="pref_vibrate">कंपन</string>
+    <string name="pref_call_ringtone_summary">येणार्‍या कॉलसाठी वलयध्वनी</string>
+    <string name="pref_notification_grace_period">सवलत अवधी</string>
+    <string name="contact_has_no_pgp_key">तुमचा संदेश एनक्रिप्ट करू शकलो नाही कारण तुमचा संपर्क त्यांची सार्वजनिक की घोषित करत नाही.
+\n
+\n<small>कृपया तुमच्या संपर्कास ओपनपीजीपी सेट करण्यास सांगा.</small></string>
+    <string name="pref_led_summary">नवीन मेसेज आल्यावर नोटिफिकेशन लाइट चमकवा</string>
+    <string name="pref_general">सामान्य</string>
+    <string name="pref_led">एलईडी सूचना</string>
+    <string name="no_pgp_keys">कोणत्याही ओपनपीजीपी की आढळल्या नाहीत</string>
+    <string name="pref_accept_files">फाइल्स स्वीकारा</string>
+    <string name="pref_notification_sound">सूचना ध्वनी</string>
+    <string name="pref_vibrate_summary">नवीन संदेश आल्यावर कंपन करा</string>
+    <string name="pref_notification_sound_summary">नवीन संदेशासाठी सूचना ध्वनी</string>
+    <string name="pref_accept_files_summary">...पेक्षा लहान असलेल्या फाइल्स आपोआप स्वीकारा</string>
 </resources>
