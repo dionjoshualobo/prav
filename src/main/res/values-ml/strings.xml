@@ -1,2 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="minutes_ago">%d മിനുട്ടുകൾ മുൻപ്</string>
+    <string name="admin">അധികാരി</string>
+    <string name="action_block_domain">ഡൊമൈൻ തടയു</string>
+    <string name="visitor">സന്ദർശകൻ</string>
+    <string name="remove_contact_text">%s നിങ്ങളുടെ സമ്പർക്ക പട്ടികയിൽ നിന്ന് മാറ്റണോ\? ഈ സമ്പർക്കത്തിൽ നിന്നുള്ള സംസാരങ്ങൾ മാറ്റില്ല.</string>
+    <string name="title_activity_sharewith">സംസാരത്തിലേയ്ക്ക് അയക്കു</string>
+    <string name="action_delete_contact">സമ്പർക്കത്തിൽ നിന്ന് മാറ്റു</string>
+    <string name="channel_details">ചാനൽ വിവരങ്ങൾ</string>
+    <string name="action_block_contact">സമ്പർക്കം തടയു</string>
+    <string name="action_unblock_domain">ഡൊമൈനിന്റെ തടയൽ മാറ്റു</string>
+    <string name="action_accounts">അക്കൗണ്ടുകൾ ക്രമീകരിക്കുക</string>
+    <string name="message_decrypting">സന്ദേശം കോഡ് ചെയ്തത് മാറ്റുന്നു. ദയവായി കാത്തിരിക്കു…</string>
+    <string name="nick_in_use">വട്ടപ്പേര് ഉപയോഗത്തിലുണ്ട്</string>
+    <string name="participant">പങ്കാളി</string>
+    <string name="action_account">അക്കൗണ്ട് ക്രമീകരിക്കു</string>
+    <string name="moderator">മോഡറേറ്റർ</string>
+    <string name="action_unblock_participant">പങ്കാളിയുടെ തടയൽ മാറ്റു</string>
+    <string name="action_end_conversation">സംസാരം അടയ്ക്കുക</string>
+    <string name="just_now">ഇപ്പോൾ</string>
+    <string name="block_contact_text">%s നെ സന്ദേശങ്ങൾ അയക്കുന്നതിൽ നിന്ന് തടയണോ\?</string>
+    <string name="action_unblock_contact">സമ്പർക്കത്തിന്റെ തടയൽ മാറ്റു</string>
+    <string name="invalid_muc_nick">വട്ടപ്പേര് ശരിയല്ല</string>
+    <string name="action_edit_contact">പേര് മാറ്റു</string>
+    <string name="owner">യജമാനൻ</string>
+    <string name="title_activity_start_conversation">സംസാരം തുടങ്ങു</string>
+    <string name="title_activity_share_via_account">അക്കൗണ്ടുകൾ വഴി പങ്കിടു</string>
+    <string name="pgp_message">OpenPGP എൻക്രിപ്റ്റ് ചെയ്ത സന്ദേശം</string>
+    <string name="minute_ago">ഒരു മിനിട്ട് മുൻപ്</string>
+    <string name="action_add_account">അക്കൗണ്ട് ചേർക്കു</string>
+    <string name="title_activity_settings">ക്രമീകരണങ്ങൾ</string>
+    <string name="action_muc_details">ഗ്രൂപ്പ് ചാറ്റ് വിവരങ്ങൾ</string>
+    <string name="action_contact_details">സമ്പർക്ക വിവരങ്ങൾ</string>
+    <string name="title_activity_block_list">തടയൽ പട്ടിക</string>
+    <string name="sending">അയക്കുന്നു…</string>
+    <string name="action_settings">ക്രമീകരണങ്ങൾ</string>
+    <string name="title_activity_manage_accounts">അക്കൗണ്ടുകൾ ക്രമീകരിക്കു</string>
+    <string name="action_block_participant">പങ്കാളിയെ തടയു</string>
+    <string name="action_add_phone_book">സമ്പർക്ക പുസ്തകത്തിലോട്ട് ചേർക്കു</string>
+    <string name="title_activity_choose_contacts">സമ്പർക്കങ്ങൾ തെരഞ്ഞെടുക്കു</string>
+    <plurals name="x_unread_conversations">
+        <item quantity="one">%d വായിക്കാത്ത സംസാരം</item>
+        <item quantity="other">%d വായിക്കാത്ത സംസാരങ്ങൾ</item>
+    </plurals>
+    <string name="action_add">പുതിയ സംസാരം</string>
+    <string name="title_activity_choose_contact">സമ്പർക്കം തെരഞ്ഞെടുക്കു</string>
+</resources>
