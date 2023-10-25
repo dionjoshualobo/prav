@@ -67,4 +67,20 @@
     <string name="set">सेट करें</string>
     <string name="ok">ठीक है</string>
     <string name="remove_contact_text">क्या आप %s संपर्क सूची से हटाना चाहेंगे\? इस संपर्क से की हुई बातचीत नहीं हटाई जायेगी।</string>
+    <string name="crash_report_title">%1$s क्रैश हुआ है</string>
+    <string name="sharing_files_please_wait">फ़ाइलें साझा की जा रहीं है। कृपया प्रतीक्षा करें…</string>
+    <string name="touch_to_fix">अपने खातों का प्रबंधन करने के लिए टैप करें</string>
+    <string name="not_in_roster">क्या इस लापता संपर्क को अपनी संपर्क सूची में जोडना चाहेंगें\?</string>
+    <string name="problem_connecting_to_account">खाते से जुड न सका</string>
+    <string name="preparing_image">छवि भेजने के लिए तैयारी हो रही है</string>
+    <string name="restart">पुनर्प्रारंभ करें</string>
+    <string name="send_never">फिर कभी न पूछें</string>
+    <string name="attach_file">फ़ाइल जोडें</string>
+    <string name="preparing_images">छवियाँ भेजने के लिए तैयारी हो रही है</string>
+    <string name="problem_connecting_to_accounts">एकाधिक खातों से जुड न सका</string>
+    <string name="choose_presence">उपकरण चुनें</string>
+    <string name="send_failed">वितरण विफल</string>
+    <string name="install">इंस्टॉल करें</string>
+    <string name="remove_bookmark_text">क्या आप %s को पुस्तचिन्ह के रूप से हटाना चाहेंगे\? इस पुस्तचिन्ह से बातचीत हटाई नहीं जाएगी।</string>
+    <string name="action_clear_history">इतिहास साफ़ करें</string>
 </resources>
