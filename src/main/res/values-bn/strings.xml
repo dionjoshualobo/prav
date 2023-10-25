@@ -99,7 +99,7 @@
     <string name="pref_accept_files">ফাইল স্বীকার করুন</string>
     <string name="send_failed">ডেলিভারি করা যায়নি</string>
     <string name="title_activity_block_list">ব্লকলিস্ট</string>
-    <string name="contact_blocked">যোগাযোগ প্রতিরোধিত</string>
+    <string name="contact_blocked">অবরুধ্য যোগাযোগ</string>
     <string name="pref_notification_sound">নোটিফিকেশনের আওয়াজ</string>
     <string name="openkeychain_required">OpenKeychain</string>
     <string name="sending">যাচ্ছে…</string>
