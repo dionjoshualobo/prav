@@ -45,4 +45,10 @@
     </plurals>
     <string name="action_add">പുതിയ സംസാരം</string>
     <string name="title_activity_choose_contact">സമ്പർക്കം തെരഞ്ഞെടുക്കു</string>
+    <string name="blocked">തടഞ്ഞു</string>
+    <string name="invite_contact">സമ്പർക്കത്തെ ക്ഷണിക്കുക</string>
+    <string name="contact_blocked">സമ്പർക്കം തടഞ്ഞു</string>
+    <string name="share_with">പങ്കിടുക…</string>
+    <string name="start_conversation">സംസാരം തുടങ്ങുക</string>
+    <string name="invite">ക്ഷണിക്കുക</string>
 </resources>
