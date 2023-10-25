@@ -88,4 +88,26 @@
     <string name="title_activity_choose_contact">संपर्क निवडा</string>
     <string name="title_activity_sharewith">संभाषणा सहत शेअर करा</string>
     <string name="title_activity_settings">सेटिंग्ज</string>
+    <string name="also_end_conversation">हे संभाषण नंतर बंद करा</string>
+    <string name="send_message">संदेश पाठवा</string>
+    <string name="send_message_to_x">%s ला संदेश पाठवा</string>
+    <string name="send_unencrypted">एनक्रिप्ट न केलेल पाठवा</string>
+    <string name="waiting">वाट पाहत आहे…</string>
+    <string name="send_omemo_message">एनक्रिप्टेड संदेश पाठवा</string>
+    <string name="offering">अर्पण…</string>
+    <string name="restart">पुन्हा सुरू करा</string>
+    <string name="openkeychain_not_installed">कृपया ओपनकीचेन स्थापित करा</string>
+    <string name="your_nick_has_been_changed">नवीन टोपणनाव वापरात आहे</string>
+    <string name="decryption_failed">डिक्रिप्शन अयशस्वी. कदाचित तुमच्याकडे योग्य खाजगी की नसेल.</string>
+    <string name="delete_file_dialog_msg">तुम्‍हाला खात्री आहे की तुम्‍हाला ही फाईल हटवायची आहे\?
+\n
+\n<b>चेतावणी:</b> हे इतर डिव्हाइसेस किंवा सर्व्हरवर संचयित केलेल्या या फाइलच्या प्रती हटवणार नाही. </string>
+    <string name="choose_presence">साधन निवडा</string>
+    <string name="openkeychain_required">ओपनकीचेन</string>
+    <string name="openkeychain_required_long">%1$s संदेश एन्क्रिप्ट आणि डिक्रिप्ट करण्यासाठी आणि तुमच्या सार्वजनिक की व्यवस्थापित करण्यासाठी &lt;b&gt;OpenKeychain&lt;/b&gt; वापरते.&lt;br&gt;&lt;br&gt;हे GPLv3+ अंतर्गत परवानाकृत आहे आणि F-Droid आणि Google Play वर उपलब्ध आहे.&lt;br&gt;&lt;br &lt;small&gt;(कृपया नंतर %1$s रीस्टार्ट करा.)&lt;/small&gt;</string>
+    <string name="send_omemo_x509_message">v\\एनक्रिप्ट केलेला संदेश पाठवा</string>
+    <string name="send_unencrypted_message">एनक्रिप्ट न केलेला संदेश पाठवा</string>
+    <string name="install">स्थापित करा</string>
+    <string name="no_pgp_key">कोणतीही ओपनपीजीपी की आढळली नाही</string>
+    <string name="send_pgp_message">ओपनपीजीपी एनक्रिप्टेड संदेश पाठवा</string>
 </resources>
