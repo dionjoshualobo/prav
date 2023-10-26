@@ -108,4 +108,5 @@
     <string name="this_account_is_disabled">आपने यह खाता अक्षम कर दिया है</string>
     <string name="could_not_delete_account_from_server">सर्वर से खाता मिटाया नहीं जा सका</string>
     <string name="start_conversation">बातचीत शुरू करें</string>
+    <string name="image">छवि</string>
 </resources>
