@@ -83,4 +83,29 @@
     <string name="install">इंस्टॉल करें</string>
     <string name="remove_bookmark_text">क्या आप %s को पुस्तचिन्ह के रूप से हटाना चाहेंगे\? इस पुस्तचिन्ह से बातचीत हटाई नहीं जाएगी।</string>
     <string name="action_clear_history">इतिहास साफ़ करें</string>
+    <string name="pref_up_push_server_summary">आपके उपकरण पर XMPP के माध्यम से पुश संदेशों को प्रसारित करने के लिए उपयोक्ता द्वारा चुना गया पुश सर्वर।</string>
+    <string name="moderate_message">संयत करें</string>
+    <string name="no_xmpp_adddress_found">कोई XMPP पता नहीं मिला</string>
+    <string name="clear_conversation_history">बातचीत का इतिहास साफ़ करें</string>
+    <string name="account_status_temporary_auth_failure">अस्थायी प्रमाणीकरण विफलता</string>
+    <string name="delete_from_server">सर्वर से खाता हटाएँ</string>
+    <string name="reject_switch_to_video">वीडियो में बदलने का अनुरोध अस्वीकार करें</string>
+    <string name="edit">संपादित करें</string>
+    <string name="pref_up_push_account_title">XMPP खाता</string>
+    <string name="no_account_deactivated">कोई नहीं (निष्क्रिय)</string>
+    <string name="decline">इंकार करें</string>
+    <string name="audio_video_disabled_tor">टोर का उपयोग करते समय कॉल अक्षम किए गए हैं</string>
+    <string name="clear_histor_msg">क्या आप इस बातचीत के सभी संदेश मिटाना चाहते हैं\?
+\n
+\n<b>चेतावनी:</b> यह अन्य उपकरणों या सर्वर पर संग्रहीत संदेशों को प्रभावित नहीं करेगा।</string>
+    <string name="no_application_to_share_uri">URI साझा करने के लिए कोई ऐप नहीं मिला</string>
+    <string name="switch_to_video">वीडियो में बहलें</string>
+    <string name="pref_up_push_server_title">पुश सर्वर</string>
+    <string name="delete_avatar">अवतार मिटाएँ</string>
+    <string name="unified_push_distributor">एकीकृत पुश वितरक</string>
+    <string name="video">वीडियो</string>
+    <string name="pref_up_push_account_summary">वह खाता जिसके माध्यम से पुश संदेश प्राप्त होंगे।</string>
+    <string name="this_account_is_disabled">आपने यह खाता अक्षम कर दिया है</string>
+    <string name="could_not_delete_account_from_server">सर्वर से खाता मिटाया नहीं जा सका</string>
+    <string name="start_conversation">बातचीत शुरू करें</string>
 </resources>
