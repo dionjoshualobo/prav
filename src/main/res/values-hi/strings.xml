@@ -124,4 +124,5 @@
     <string name="send_unencrypted_message">अनइनक्रिप्टेड संदेश भेजें</string>
     <string name="no_pgp_key">कोई भी ओपन पीजीपी चाभी नहीं मिली</string>
     <string name="send_pgp_message">ओपन पीजीपी इनक्रिप्टेड संदेश भेजें</string>
+    <string name="vector_graphic">वेक्टर ग्राफ़िक</string>
 </resources>
