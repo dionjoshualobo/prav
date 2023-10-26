@@ -109,4 +109,19 @@
     <string name="could_not_delete_account_from_server">सर्वर से खाता मिटाया नहीं जा सका</string>
     <string name="start_conversation">बातचीत शुरू करें</string>
     <string name="image">छवि</string>
+    <string name="also_end_conversation">इस बातचीत को बाद में बंद करें</string>
+    <string name="pref_attachments">अनुलग्नक</string>
+    <string name="pref_notification_settings">अधिसूचना</string>
+    <string name="send_unencrypted">अनइनक्रिप्टेड भेजें</string>
+    <string name="waiting">प्रतीक्षारत…</string>
+    <string name="send_omemo_message">इनक्रिप्टेड संदेश भेजें</string>
+    <string name="openkeychain_not_installed">कृपया ओपनकीचेन को इंस्टॉल करें</string>
+    <string name="your_nick_has_been_changed">नया उपनाम प्रयोग में है</string>
+    <string name="no_pgp_keys">कोई भी ओपन पीजीपी चाभी उपलब्ध नहीं</string>
+    <string name="pref_accept_files">फ़ाइल स्वीकार करें</string>
+    <string name="openkeychain_required">ओपन की चेन</string>
+    <string name="send_omemo_x509_message">v\\अनइनक्रिप्टेड संदेश भेजें</string>
+    <string name="send_unencrypted_message">अनइनक्रिप्टेड संदेश भेजें</string>
+    <string name="no_pgp_key">कोई भी ओपन पीजीपी चाभी नहीं मिली</string>
+    <string name="send_pgp_message">ओपन पीजीपी इनक्रिप्टेड संदेश भेजें</string>
 </resources>
