@@ -153,4 +153,22 @@
     <string name="accept">স্বীকার করুন</string>
     <string name="pref_confirm_messages">বার্তাগুলি নিশ্চিত করুন</string>
     <string name="recording_error">সমস্যা</string>
+    <string name="account_status_unauthorized">অননুমোদিত</string>
+    <string name="account_status_no_internet">ইন্টারনেট নেই</string>
+    <string name="account_status_disabled">সাময়িকভাবে বন্ধ</string>
+    <string name="account_status_regis_not_sup">সার্ভার রেজিস্ট্রেশন সমর্থন করে না</string>
+    <string name="account_status_regis_success">রেজিস্ট্রেশন সম্পূর্ণ</string>
+    <string name="account_status_online">অনলাইন</string>
+    <string name="pref_never_send_crash_summary">স্ট্যাক ট্রেস পাঠালে আপনি অ্যাপের উন্নয়নে সাহায্য করবেন</string>
+    <string name="pref_advanced_options">প্রযুক্তিগত</string>
+    <string name="account_status_unknown">অজানা</string>
+    <string name="account_status_regis_conflict">এই ইউজারনেমটি আরেকজন নিয়ে নিয়েছে</string>
+    <string name="pref_never_send_crash">কখনো কোনো ক্র্যাশ রিপোর্ট পাঠাবেন না</string>
+    <string name="account_status_connecting">সংযোগ করা হচ্ছে…</string>
+    <string name="account_status_not_found">সার্ভার খুঁজে পাওয়া না</string>
+    <string name="account_status_regis_fail">রেজিস্ট্রেশন ব্যর্থ</string>
+    <string name="error_security_exception_during_image_copy">আপনি যে অ্যাপ দিয়ে এই ছবিটি বেছেছেন, সে ওই ফাইলটি আমাদের পড়ার জন্য যথেষ্ট অনুমতি দেয়নি।
+\n
+\n<small>কোনো অন্য ফাইল ম্যানেজার ব্যবহার করুন ছবিটি বাছার জন্য</small>।</string>
+    <string name="account_status_offline">অফলাইন</string>
 </resources>
