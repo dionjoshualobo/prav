@@ -3,7 +3,6 @@
 - Receipts in main page (backport from monocles)
 - Use logo instead of Prav text in main page
 - Put search button in main menu (in chats and main page)
-- Curved bubbles
 - Abstract default bg in chats
 - Per-chat notification settings
 - Online/Offline indicator
