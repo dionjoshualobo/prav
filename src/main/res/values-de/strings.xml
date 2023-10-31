@@ -18,4 +18,16 @@
     <string name="action_settings">Einstellungen</string>
     <string name="action_block_participant">Block Teilnehmer</string>
     <string name="action_add">Neue Unterhaltung</string>
+    <string name="minutes_ago">vor %d Minuten</string>
+    <string name="action_delete_contact">Aus Kontakten entfernen</string>
+    <string name="nick_in_use">Spitzname wird bereits verwendet</string>
+    <string name="title_activity_start_conversation">Konversation beginnen</string>
+    <string name="minute_ago">vor 1 Minute</string>
+    <string name="title_activity_settings">Einstellungen</string>
+    <string name="register_account">Neues Konto auf Server registrieren</string>
+    <string name="sending">Senden…</string>
+    <string name="change_password_on_server">Passwort auf Server ändern</string>
+    <string name="share_with">Teilen mit…</string>
+    <string name="action_add_phone_book">Zum Adressbuch hinzufügen</string>
+    <string name="title_activity_choose_contact">Kontakt auswählen</string>
 </resources>
