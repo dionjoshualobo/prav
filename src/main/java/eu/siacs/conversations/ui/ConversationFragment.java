@@ -4,6 +4,8 @@ import static eu.siacs.conversations.ui.XmppActivity.EXTRA_ACCOUNT;
 import static eu.siacs.conversations.ui.XmppActivity.REQUEST_INVITE_TO_CONVERSATION;
 import static eu.siacs.conversations.ui.util.SoftKeyboardUtils.hideSoftKeyboard;
 import static eu.siacs.conversations.utils.PermissionUtils.allGranted;
+import static eu.siacs.conversations.utils.PermissionUtils.audioGranted;
+import static eu.siacs.conversations.utils.PermissionUtils.cameraGranted;
 import static eu.siacs.conversations.utils.PermissionUtils.getFirstDenied;
 import static eu.siacs.conversations.utils.PermissionUtils.writeGranted;
 
@@ -416,6 +418,7 @@ public class ConversationFragment extends XmppFragment
                 public void onClick(View v) {
                     final Account account = conversation == null ? null : conversation.getAccount();
                     if (account != null) {
+                        account.setOption(Account.OPTION_SOFT_DISABLED, false);
                         account.setOption(Account.OPTION_DISABLED, false);
                         activity.xmppConnectionService.updateAccount(account);
                     }
@@ -478,7 +481,8 @@ public class ConversationFragment extends XmppFragment
                                             null,
                                             0,
                                             0,
-                                            0);
+                                            0,
+                                            Compatibility.pgpStartIntentSenderOptions());
                         } catch (SendIntentException e) {
                             Toast.makeText(
                                             getActivity(),
@@ -1643,6 +1647,10 @@ public class ConversationFragment extends XmppFragment
                     .show();
             return;
         }
+        final Account account = conversation.getAccount();
+        if (account.setOption(Account.OPTION_SOFT_DISABLED, false)) {
+            activity.xmppConnectionService.updateAccount(account);
+        }
         final Contact contact = conversation.getContact();
         if (RtpCapability.jmiSupport(contact)) {
             triggerRtpSession(contact.getAccount(), contact.getJid().asBareJid(), action);
@@ -1898,6 +1906,9 @@ public class ConversationFragment extends XmppFragment
                 activity.xmppConnectionService.restartFileObserver();
             }
             refresh();
+        }
+        if (cameraGranted(grantResults, permissions) || audioGranted(grantResults, permissions)) {
+            XmppConnectionService.toggleForegroundService(activity);
         }
     }
 
@@ -2695,6 +2706,8 @@ public class ConversationFragment extends XmppFragment
                     R.string.this_account_is_disabled,
                     R.string.enable,
                     this.mEnableAccountListener);
+        } else if (account.getStatus() == Account.State.LOGGED_OUT) {
+            showSnackbar(R.string.this_account_is_logged_out,R.string.log_in,this.mEnableAccountListener);
         } else if (conversation.isBlocked()) {
             showSnackbar(R.string.contact_blocked, R.string.unblock, this.mUnblockClickListener);
         } else if (contact != null
@@ -3423,7 +3436,7 @@ public class ConversationFragment extends XmppFragment
         try {
             getActivity()
                     .startIntentSenderForResult(
-                            pendingIntent.getIntentSender(), requestCode, null, 0, 0, 0);
+                            pendingIntent.getIntentSender(), requestCode, null, 0, 0, 0, Compatibility.pgpStartIntentSenderOptions());
         } catch (final SendIntentException ignored) {
         }
     }
