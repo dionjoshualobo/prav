@@ -65,6 +65,7 @@ import eu.siacs.conversations.R;
 import eu.siacs.conversations.crypto.XmppDomainVerifier;
 import eu.siacs.conversations.crypto.axolotl.AxolotlService;
 import eu.siacs.conversations.crypto.sasl.ChannelBinding;
+import eu.siacs.conversations.crypto.sasl.ChannelBindingMechanism;
 import eu.siacs.conversations.crypto.sasl.HashedToken;
 import eu.siacs.conversations.crypto.sasl.SaslMechanism;
 import eu.siacs.conversations.entities.Account;
@@ -232,10 +233,11 @@ public class XmppConnection implements Runnable {
                 return;
             }
             if (account.getStatus() != nextStatus) {
-                if ((nextStatus == Account.State.OFFLINE)
-                        && (account.getStatus() != Account.State.CONNECTING)
-                        && (account.getStatus() != Account.State.ONLINE)
-                        && (account.getStatus() != Account.State.DISABLED)) {
+                if (nextStatus == Account.State.OFFLINE
+                        && account.getStatus() != Account.State.CONNECTING
+                        && account.getStatus() != Account.State.ONLINE
+                        && account.getStatus() != Account.State.DISABLED
+                        && account.getStatus() != Account.State.LOGGED_OUT) {
                     return;
                 }
                 if (nextStatus == Account.State.ONLINE) {
@@ -826,10 +828,15 @@ public class XmppConnection implements Runnable {
                 tokenMechanism = null;
             }
             if (tokenMechanism != null && !Strings.isNullOrEmpty(token)) {
-                this.account.setFastToken(tokenMechanism, token);
-                Log.d(
-                        Config.LOGTAG,
-                        account.getJid().asBareJid() + ": storing hashed token " + tokenMechanism);
+                if (ChannelBinding.priority(tokenMechanism.channelBinding) >= ChannelBindingMechanism.getPriority(currentSaslMechanism)) {
+                    this.account.setFastToken(tokenMechanism, token);
+                    Log.d(
+                            Config.LOGTAG,
+                            account.getJid().asBareJid() + ": storing hashed token " + tokenMechanism);
+                } else {
+                    Log.d(Config.LOGTAG,account.getJid().asBareJid()+": not accepting hashed token "+ tokenMechanism.name()+" for log in mechanism "+currentSaslMechanism.getMechanism());
+                    this.account.resetFastToken();
+                }
             } else if (this.hashTokenRequest != null) {
                 Log.w(
                         Config.LOGTAG,
@@ -1254,8 +1261,9 @@ public class XmppConnection implements Runnable {
         tagReader.readTag();
         final Socket socket = this.socket;
         final SSLSocket sslSocket = upgradeSocketToTls(socket);
-        tagReader.setInputStream(sslSocket.getInputStream());
-        tagWriter.setOutputStream(sslSocket.getOutputStream());
+        this.socket = sslSocket;
+        this.tagReader.setInputStream(sslSocket.getInputStream());
+        this.tagWriter.setOutputStream(sslSocket.getOutputStream());
         Log.d(Config.LOGTAG, account.getJid().asBareJid() + ": TLS connection established");
         final boolean quickStart;
         try {
@@ -2212,9 +2220,13 @@ public class XmppConnection implements Runnable {
 
     private boolean establishStream(final SSLSockets.Version sslVersion)
             throws IOException, InterruptedException {
-        final SaslMechanism quickStartMechanism =
-                SaslMechanism.ensureAvailable(account.getQuickStartMechanism(), sslVersion);
         final boolean secureConnection = sslVersion != SSLSockets.Version.NONE;
+        final SaslMechanism quickStartMechanism;
+        if (secureConnection) {
+            quickStartMechanism = SaslMechanism.ensureAvailable(account.getQuickStartMechanism(), sslVersion);
+        } else {
+            quickStartMechanism = null;
+        }
         if (secureConnection
                 && Config.QUICKSTART_ENABLED
                 && quickStartMechanism != null

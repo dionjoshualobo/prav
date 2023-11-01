@@ -153,6 +153,7 @@
     <string name="error_security_exception">The app you used to share this file did not provide enough permissions.</string>
     <string name="account_status_unknown">Unknown</string>
     <string name="account_status_disabled">Temporarily disabled</string>
+    <string name="account_state_logged_out">Logged out</string>
     <string name="account_status_online">Online</string>
     <string name="account_status_connecting">Connecting\u2026</string>
     <string name="account_status_offline">Offline</string>
@@ -539,6 +540,7 @@
     <string name="send_corrected_message">Send corrected message</string>
     <string name="no_keys_just_confirm">You have already validated this persons fingerprint securely to confirm trust. By selecting “Done” you are just confirming that %s is part of this group chat.</string>
     <string name="this_account_is_disabled">You have disabled this account</string>
+    <string name="this_account_is_logged_out">You have logged out of this account</string>
     <string name="security_error_invalid_file_access">Security error: Invalid file access!</string>
     <string name="no_application_to_share_uri">No app found to share URI</string>
     <string name="share_uri_with">Share URI with…</string>
@@ -938,8 +940,8 @@
     <string name="reconnecting_video_call">Reconnecting video call</string>
     <string name="disable_tor_to_make_call">Disable Tor to make calls</string>
     <string name="incoming_call">Incoming call</string>
-    <string name="incoming_call_duration_timestamp">Incoming call (%s) · %s</string>
-    <string name="outgoing_call_duration_timestamp">Outgoing call (%s) · %s</string>
+    <string name="incoming_call_duration_timestamp">Incoming call (%1$s) · %2$s</string>
+    <string name="outgoing_call_duration_timestamp">Outgoing call (%1$s) · %2$s</string>
     <string name="missed_call_timestamp">Missed call · %s</string>
     <string name="outgoing_call">Outgoing call</string>
     <string name="outgoing_call_timestamp">Outgoing call · %s</string>
@@ -1018,4 +1020,9 @@
     <string name="moderate_reason">Moderation Reason</string>
     <string name="unable_to_moderate">Unable to Moderate</string>
     <string name="moderate_recent">Moderate messages?</string>
+    <string name="hide_notification">Hide notification</string>
+    <string name="log_out">Log out</string>
+    <string name="log_in">Log in</string>
+    <string name="contact_uses_unverified_keys">Your contact uses unverified devices. Scan their 2D barcode to perform verification and impede active MITM attacks.</string>
+    <string name="unverified_devices">You are using unverified devices. Scan the 2D barcode on your other devices to perform verification and impede active MITM attacks.</string>
 </resources>
