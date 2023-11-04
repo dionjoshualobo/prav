@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="minutes_ago">%d മിനുട്ടുകൾ മുൻപ്</string>
-    <string name="admin">അധികാരി</string>
+    <string name="admin">അഡ്മിൻ</string>
     <string name="action_block_domain">ഡൊമൈൻ തടയു</string>
     <string name="visitor">സന്ദർശകൻ</string>
     <string name="remove_contact_text">%s നിങ്ങളുടെ സമ്പർക്ക പട്ടികയിൽ നിന്ന് മാറ്റണോ\? ഈ സമ്പർക്കത്തിൽ നിന്നുള്ള സംസാരങ്ങൾ മാറ്റില്ല.</string>
@@ -103,4 +103,7 @@
         <item quantity="one"/>
         <item quantity="other"/>
     </plurals>
+    <string name="unblock_contact_text">%sനെ അൺബ്ലോക്ക് ചെയ്ത് നിങ്ങൾക്ക് സന്ദേശങ്ങൾ അയക്കാൻ അനുവദിക്കണമോ \?</string>
+    <string name="unblock_domain_text">%sൽ നിന്നുള്ള എല്ലാ ബന്ധങ്ങളുെ അൺബ്ലോക്ക് ചെയ്യണമോ</string>
+    <string name="block_domain_text">%sൽ നിന്നുള്ള എല്ലാ ബന്ധങ്ങളും വിച്ഛേദിക്കണമോ\?</string>
 </resources>
