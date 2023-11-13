@@ -2,6 +2,7 @@ package eu.siacs.conversations.ui;
 
 import android.app.FragmentManager;
 import android.content.ClipData;
+import android.content.ClipDescription;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -12,6 +13,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -19,8 +21,12 @@ import android.preference.PreferenceCategory;
 import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.provider.MediaStore;
+import android.text.InputType;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -575,11 +581,30 @@ public class SettingsActivity extends XmppActivity implements OnSharedPreference
 
     private void createBackup() {
         ContextCompat.startForegroundService(this, new Intent(this, ExportBackupService.class));
-        String password = xmppConnectionService.getAccounts().get(0).getPassword();
+        Account account = xmppConnectionService.getAccounts().get(0);
+        String password = account.getPassword();
+        boolean passwordKnownToUser = !account.isOptionSet(Account.OPTION_MAGIC_CREATE);
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage(getString(R.string.backup_started_message, password));
         builder.setPositiveButton(R.string.ok, null);
-        builder.setNeutralButton("Copy Password", (dialog, which) -> copyPasswordToClipboard(this, password));
+        if (passwordKnownToUser) {
+            builder.setMessage(R.string.backup_started_message_user_knows_password);
+        } else {
+            View dialogview = getLayoutInflater().inflate(R.layout.dialog_backup_create, null);
+            TextView passwordView = dialogview.findViewById(R.id.passwordTextView);
+            passwordView.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+            passwordView.setText(password);
+            ToggleButton toggleButton = dialogview.findViewById(R.id.toggleButton);
+            toggleButton.setOnCheckedChangeListener((ignore, isChecked) -> {
+                if (isChecked) {
+                    passwordView.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                } else {
+                    passwordView.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                }
+            });
+            builder.setView(dialogview);
+            builder.setMessage(R.string.backup_started_message);
+            builder.setNeutralButton("Copy Password", (dialog, which) -> copyPasswordToClipboard(this, password));
+        }
         builder.create().show();
     }
 
@@ -587,6 +612,15 @@ public class SettingsActivity extends XmppActivity implements OnSharedPreference
         ClipboardManager clipboard = (ClipboardManager)
                 getSystemService(Context.CLIPBOARD_SERVICE);
         ClipData clip = ClipData.newPlainText("password", password);
+        PersistableBundle persistableBundle = new PersistableBundle();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            persistableBundle.putBoolean(ClipDescription.EXTRA_IS_SENSITIVE, true);
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
+            persistableBundle.putBoolean("android.content.extra.IS_SENSITIVE", true);
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            clip.getDescription().setExtras(persistableBundle);
+        }
         clipboard.setPrimaryClip(clip);
         if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.S_V2)
             Toast.makeText(context, "Copied", Toast.LENGTH_SHORT).show();
