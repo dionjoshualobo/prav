@@ -1,2 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="pref_notification_grace_period_summary">दुसर्‍या डिव्हाइसवरील क्रियाकलाप पाहिल्यानंतर प्राव किती वेळ शांत राहतो</string>
+</resources>
