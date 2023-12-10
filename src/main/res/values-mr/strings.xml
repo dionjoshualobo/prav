@@ -183,4 +183,13 @@
         <item quantity="one"/>
         <item quantity="other"/>
     </plurals>
+    <string name="pref_confirm_messages_summary">तुम्‍हाला तुमच्‍या संपर्कांना कळू द्या की तुम्‍हाला त्‍यांचे मेसेज केव्‍हा मिळाले आणि वाचा</string>
+    <string name="pref_never_send_crash_summary">स्टॅक ट्रेस पाठवून तुम्ही विकासाला मदत करत आहात</string>
+    <string name="pref_advanced_options">प्रगत</string>
+    <string name="pref_ui_options">यु आय</string>
+    <string name="pref_prevent_screenshots">स्क्रीनशॉट प्रतिबंधित करा</string>
+    <string name="pref_prevent_screenshots_summary">ॲप स्विचरमध्ये ॲप सामग्री लपवा आणि स्क्रीनशॉट ब्लॉक करा</string>
+    <string name="pref_never_send_crash">क्रॅश रिपोर्ट कधीही पाठवू नका</string>
+    <string name="pref_notification_grace_period_summary">तुमच्‍या इतर डिव्‍हाइसमध्‍ये अ‍ॅक्टिव्हिटी डिटेक्ट केल्‍यानंतर सूचना शांत केल्या जातात.</string>
+    <string name="pref_confirm_messages">संदेशांची पुष्टी करा</string>
 </resources>
