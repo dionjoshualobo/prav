@@ -4,6 +4,6 @@ We believe privacy is a fundamental right and should be easily exercised by anyo
 
 With prav, your chats are private and only you can read them https://prav.app/privacy-policy/. It is based on XMPP protocol, so users can talk to any other XMPP users all over the world, without being locked-in to a service. 
 
-Prav's source code is available publicly under a free license, providing transparency and audatibility. We are backed by a cooperative society in India, leading to democratic decision making.
+Prav's source code is available publicly under a free license, providing transparency and audatibility. We are currently in beta and in the process of forming a cooperative society in India.
 
-Learn more at https://prav.app.
+Learn more at https://prav.app. Credits: Prav is built on Quicksy.
