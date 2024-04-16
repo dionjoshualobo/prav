@@ -131,58 +131,6 @@
     <string name="pref_vibrate_summary">नवीन संदेश आल्यावर कंपन करा</string>
     <string name="pref_notification_sound_summary">नवीन संदेशासाठी सूचना ध्वनी</string>
     <string name="pref_accept_files_summary">...पेक्षा लहान असलेल्या फाइल्स आपोआप स्वीकारा</string>
-    <plurals name="hours">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="weeks">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="days">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="view_users">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="toast_delete_certificates">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="x_messages">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="seconds">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="n_missed_calls">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="minutes">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="n_missed_calls_from_x">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="n_missed_calls_from_m_contacts">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="some_messages_could_not_be_delivered">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="months">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
     <string name="pref_confirm_messages_summary">तुम्‍हाला तुमच्‍या संपर्कांना कळू द्या की तुम्‍हाला त्‍यांचे मेसेज केव्‍हा मिळाले आणि वाचा</string>
     <string name="pref_never_send_crash_summary">स्टॅक ट्रेस पाठवून तुम्ही विकासाला मदत करत आहात</string>
     <string name="pref_advanced_options">प्रगत</string>

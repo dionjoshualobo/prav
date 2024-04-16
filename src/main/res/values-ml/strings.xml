@@ -51,58 +51,6 @@
     <string name="share_with">പങ്കിടുക…</string>
     <string name="start_conversation">സംസാരം തുടങ്ങുക</string>
     <string name="invite">ക്ഷണിക്കുക</string>
-    <plurals name="hours">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="weeks">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="days">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="view_users">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="toast_delete_certificates">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="x_messages">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="seconds">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="n_missed_calls">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="minutes">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="n_missed_calls_from_x">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="n_missed_calls_from_m_contacts">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="some_messages_could_not_be_delivered">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="months">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
     <string name="unblock_contact_text">%sനെ അൺബ്ലോക്ക് ചെയ്ത് നിങ്ങൾക്ക് സന്ദേശങ്ങൾ അയക്കാൻ അനുവദിക്കണമോ \?</string>
     <string name="unblock_domain_text">%sൽ നിന്നുള്ള എല്ലാ ബന്ധങ്ങളുെ അൺബ്ലോക്ക് ചെയ്യണമോ</string>
     <string name="block_domain_text">%sൽ നിന്നുള്ള എല്ലാ ബന്ധങ്ങളും വിച്ഛേദിക്കണമോ\?</string>

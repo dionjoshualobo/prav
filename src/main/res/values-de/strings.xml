@@ -30,58 +30,6 @@
     <string name="share_with">Teilen mit…</string>
     <string name="action_add_phone_book">Zum Adressbuch hinzufügen</string>
     <string name="title_activity_choose_contact">Kontakt auswählen</string>
-    <plurals name="hours">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="weeks">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="days">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="view_users">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="toast_delete_certificates">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="x_messages">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="seconds">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="n_missed_calls">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="minutes">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="n_missed_calls_from_x">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="n_missed_calls_from_m_contacts">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="some_messages_could_not_be_delivered">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
-    <plurals name="months">
-        <item quantity="one"/>
-        <item quantity="other"/>
-    </plurals>
     <plurals name="x_unread_conversations">
         <item quantity="one">eine Ungelesene Unterhaltung</item>
         <item quantity="other">%d ungelesene Unterhaltungen</item>
