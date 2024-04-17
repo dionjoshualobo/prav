@@ -1,2 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="pref_notification_grace_period_summary">Die Dauer, für die Prav stumm bleibt, wenn Aktivität auf anderen Geräten festgestellt wurde</string>
+    <string name="pref_never_send_crash_summary">Durch das einsenden von Absturzberichten hilfst du der Entwicklung von Prav</string>
+    <string name="pref_broadcast_last_activity_summary">Lasse alle deine Kontakte Wissen, wenn du Prav benutzt</string>
+    <string name="huawei_protected_apps_summary">Um weiterhin Benachrichtigungen zu erhalten wenn der Bildschirm ausgeschaltet ist, musst du Prav zu den geschützten Anwendungen hinzufügen.</string>
+    <string name="unknown_security_error">Unbekannter Sicherheitsfehler.</string>
+    <string name="timeout_while_connecting_to_server">Timeout bei Serververbindung.</string>
+    <string name="set_profile_picture">Prav-Profilbild</string>
+    <string name="not_available_in_your_country">Prav ist in deinem Land nicht verfügbar.</string>
+    <string name="unable_to_verify_server_identity">Kann Serveridentität nicht bestätigen.</string>
+    <string name="change_language">Sprache ändern</string>
+    <string name="import_backup">Aus Backup wiederherstellen</string>
+</resources>
