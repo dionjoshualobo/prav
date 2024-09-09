@@ -187,4 +187,9 @@
     <string name="account_status_offline">ऑफ़लाइन</string>
     <string name="mgmt_account_disable">अस्थायी रूप से अक्षम करें</string>
     <string name="account_settings_jabber_id">एक्सएमपीपी पता</string>
+    <string name="try_again_in_x">%s में वापिस कोशिश करें</string>
+    <string name="the_app_is_out_of_date">आप इस ऐप का एक आउटडेटेड वर्शन इस्तेमाल कर रहे है।</string>
+    <string name="update">अपडेट करें</string>
+    <string name="log_in">लॉगिन करें</string>
+    <string name="contact_uses_unverified_keys">आपके कॉन्टैक्ट का डिवाइस वेरिफाइड नहीं है। वेरिफाइ करने के लिए उनका बारकोड स्कैन करें; ये मैन-इन-द-मिडल अटैक को रोकने में कारगर होगा।</string>
 </resources>
