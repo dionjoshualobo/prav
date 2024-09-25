@@ -5,11 +5,11 @@
          xmlns:foaf="http://xmlns.com/foaf/0.1/"
          xmlns:xmpp="https://linkmauve.fr/ns/xmpp-doap#"
          xmlns:schema="https://schema.org/">
-    <name>Conversations</name>
+    <name>Prav</name>
 
     <created>2023-10-25</created>
 
-    <shortdesc xml:lang="en">XMPP Client for Android with Contact Discovery</shortdesc>
+    <shortdesc xml:lang="en">XMPP Client for Android</shortdesc>
 
     <description xml:lang="en">A user-friendly messenger for everyone with a focus on privacy and freedom!</description>
 
@@ -38,10 +38,10 @@
     <category rdf:resource="https://linkmauve.fr/ns/xmpp-doap#category-client"/>
 
     <maintainer>
-        <foaf:Person>
-            <foaf:name>Prav Maintainers</foaf:name>
+        <foaf:Group>
+            <foaf:name>Prav Project</foaf:name>
             <foaf:homepage rdf:resource="https://prav.app/"/>
-        </foaf:Person>
+        </foaf:Group>
     </maintainer>
 
     <repository>
