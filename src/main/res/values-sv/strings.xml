@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="action_add">Ny konversation</string>
+    <string name="action_accounts">Hantera konton</string>
+    <string name="action_account">Hantera konto</string>
+    <string name="action_settings">Inställningar</string>
+</resources>
