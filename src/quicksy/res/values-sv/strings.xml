@@ -1,2 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="not_available_in_your_country">Prav är inte tillgängligt i ditt land.</string>
+    <string name="unknown_security_error">Okänt säkerhetsfel.</string>
+    <string name="timeout_while_connecting_to_server">Tidsgränsen uppnåddes under anslutningen till servern.</string>
+    <string name="change_language">Byt språk</string>
+    <string name="import_backup">Återställ från Säkerhetskopia</string>
+    <string name="pref_broadcast_last_activity_summary">Låt alla dina kontakter få veta när du använder Prav</string>
+    <string name="huawei_protected_apps_summary">För att fortsätta ta emot aviseringar även när skärmen är avstängd så behöver du lägga till Prav i listan över skyddade appar.</string>
+    <string name="unable_to_verify_server_identity">Serverns identitet kunde inte bekräftas.</string>
+</resources>
