@@ -27,7 +27,7 @@
     <language>hi</language>
 
     <schema:logo rdf:resource="https://codeberg.org/prav/prav/raw/branch/master/logo.png"/>
-    <schema:screenshot rdf:resource='https://codeberg.org/iNPUTmice/Conversations/raw/branch/master/fastlane/metadata/android/en-US/images/phoneScreenshots/01.png'/>
+    <schema:screenshot rdf:resource="https://codeberg.org/prav/prav/raw/branch/master/prav-screenshot.jpg"/>
     
     <programming-language>Java</programming-language>
 
