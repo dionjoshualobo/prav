@@ -446,4 +446,7 @@
     <string name="current_password">നിലവിലെ രഹസ്യവാക്ക്</string>
     <string name="error_no_keys_to_trust_server_error">ഈ സമ്പര്‍ക്കത്തിന് ഉപയോഗപ്രദമായ കീകള്‍ ലഭ്യമല്ല.\nപുതിയ കീകള്‍ സര്‍വറില്‍ നിന്ന് ലഭിക്കുന്നില്ല. നിങ്ങളുടെ സമ്പര്‍ക്കത്തിന്റെ സര്‍വറില്‍ എന്തെങ്കിലും പ്രശ്നമുണ്ടോ?</string>
     <string name="error_no_keys_to_trust_presence">ഈ സമ്പര്‍ക്കത്തിന് ഉപയോഗപ്രദമായ കീകള്‍ ലഭ്യമല്ല.\nനീങ്ങള്‍ രണ്ടാള്‍ക്കും സാന്നിധ്യ സബ്സ്ക്രിപ്ഷന്‍ ഉണ്ടെന്ന് ഉറപ്പു വരുത്തുക.</string>
+    <string name="url_copied_to_clipboard">കണ്ണി ക്ലിപ്ബോര്‍ഡിലേക്ക് പകര്‍ത്തി</string>
+    <string name="jabber_id_copied_to_clipboard">എക്സ്എംപിപി വിലാസം ക്ലിപ്ബോര്‍ഡിലേക്ക് പകര്‍ത്തി</string>
+    <string name="error_message_copied_to_clipboard">പിഴവ് സന്ദേശം ക്ലിപ്ബോര്‍ഡിലേക്ക് പകര്‍ത്തി</string>
 </resources>
