@@ -1311,6 +1311,7 @@ public class ConversationFragment extends XmppFragment
             final MenuItem quoteMessage = menu.findItem(R.id.quote_message);
             final MenuItem retryDecryption = menu.findItem(R.id.retry_decryption);
             final MenuItem correctMessage = menu.findItem(R.id.correct_message);
+            final MenuItem retractMessage = menu.findItem(R.id.retract_message);
             final MenuItem shareWith = menu.findItem(R.id.share_with);
             final MenuItem sendAgain = menu.findItem(R.id.send_again);
             final MenuItem retryAsP2P = menu.findItem(R.id.send_again_as_p2p);
@@ -1365,12 +1366,19 @@ public class ConversationFragment extends XmppFragment
                         !showError
                                 && m.getType() == Message.TYPE_TEXT
                                 && !m.isGeoUri()
+                                && m.isLastCorrectableMessage());
+                retractMessage.setVisible(
+                        !showError
+                                && m.getType() == Message.TYPE_TEXT
+                                && !m.isGeoUri()
                                 && m.isLastCorrectableMessage()
-                                && singleOrOccupantId);
+                                && !m.getBody().equals("")
+                                && !m.getBody().equals(" "));
             } else {
                 moderateMessage.setVisible(false);
                 addReaction.setVisible(false);
                 correctMessage.setVisible(false);
+                retractMessage.setVisible(false);
             }
             if (!m.isFileOrImage()
                     && !encrypted
@@ -1479,6 +1487,9 @@ public class ConversationFragment extends XmppFragment
                 return true;
             case R.id.correct_message:
                 correctMessage(selectedMessage);
+                return true;
+            case R.id.retract_message:
+                retractMessage(selectedMessage);
                 return true;
             case R.id.copy_message:
                 ShareUtil.copyToClipboard(requireXmppActivity(), selectedMessage);
@@ -2433,6 +2444,24 @@ public class ConversationFragment extends XmppFragment
         this.binding.textinput.setText("");
         this.binding.textinput.append(message.getBody());
     }
+
+    private void retractMessage(final Message message) {
+        final MaterialAlertDialogBuilder builder =
+                new MaterialAlertDialogBuilder(requireActivity());
+        builder.setNegativeButton(R.string.cancel, null);
+        builder.setTitle(R.string.retract_message);
+        builder.setMessage("Do you really want to Delete this message?");
+        builder.setPositiveButton(
+                R.string.confirm,
+                (dialog, which) -> {
+                    message.setBody(" ");
+                    message.putEdited(message.getUuid(), message.getServerMsgId());
+                    message.setServerMsgId(null);
+                    message.setUuid(UUID.randomUUID().toString());
+                    sendMessage(message);
+                });
+        builder.create().show();
+    }   
 
     private void highlightInConference(String nick) {
         final Editable editable = this.binding.textinput.getText();

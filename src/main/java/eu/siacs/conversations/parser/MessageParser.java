@@ -399,8 +399,16 @@ public class MessageParser extends AbstractParser
 
         final var oob = packet.getExtension(OutOfBandData.class);
         final String oobUrl = oob != null ? oob.getURL() : null;
-        final var replace = packet.getExtension(Replace.class);
-        final var replacementId = replace == null ? null : replace.getId();
+        Element replace = packet.getExtension(Replace.class); 
+        String replacementId = replace == null ? null : replace.getAttribute("id");
+         if (replacementId == null) {
+            final Element fasten = packet.findChild("apply-to", "urn:xmpp:fasten:0");
+            if (replace == null) replace = packet.findChild("retract", "urn:xmpp:message-retract:1");
+            if (fasten != null && fasten.findChild("retract", "urn:xmpp:message-retract:0") != null) {
+                replacementId = fasten.getAttribute("id");
+                packet.setBody("");
+            }
+        }
         final var axolotlEncrypted = packet.getOnlyExtension(Encrypted.class);
         int status;
         final Jid counterpart;
