@@ -1,2 +1,0 @@
-* „Service Outage Status“ tugi
-* Väiksemad turvaparandused, mis seonduvad sõnumi sisu ja occupant-id ja stanza-id töötlemisega

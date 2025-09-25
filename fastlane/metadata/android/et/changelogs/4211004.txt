@@ -1,2 +1,0 @@
-* Parandasime kõnede lõimimise vead mõnedes Android 14-põhistes nutiseadmetes
-* Lisasime seadistuse „Kutsed võõrastelt“

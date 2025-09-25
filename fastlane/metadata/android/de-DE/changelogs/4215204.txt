@@ -1,2 +1,0 @@
-* Teilnehmerzahl wird im Untertitel für öffentliche Channels angezeigt
-* Problem beim Beitritt zu MultiUserChats auf sehr alten Prosody-Servern behoben

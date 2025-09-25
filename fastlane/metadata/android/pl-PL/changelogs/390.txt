@@ -1,1 +1,0 @@
-* Umożliwienie nagrania wiadomości głosowej gdy odbiorca połączenia jest zajęty

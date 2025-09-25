@@ -1,2 +1,0 @@
-* Muutsime sertifikaadiga sisselogimise kasutajaliidese paremaks
-* Lisasime võimaluse tõsta vestlused ülal esile (ehk lisada lemmikuks)

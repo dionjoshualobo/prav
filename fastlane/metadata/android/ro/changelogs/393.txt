@@ -1,3 +1,0 @@
-* Afișarea butonului de ajutor dacă apelul audio/video eșuează
-* Repararea unor crash-uri enervante
-* Repararea conexiunilor Jingle (transfer fișiere + apeluri) cu JID-uri goale

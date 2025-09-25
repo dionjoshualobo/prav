@@ -1,3 +1,0 @@
-* Ndreqje thirrjesh A/V në Android 8
-* Ndreqje “race conditions” në integrim thirrjeje të re
-* Ndreqje ngjeshjeje videosh që mbetet

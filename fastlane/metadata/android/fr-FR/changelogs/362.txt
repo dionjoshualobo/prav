@@ -1,1 +1,0 @@
-* Support de basculement automatique du thème sur Android 10

@@ -1,2 +1,0 @@
-* Supporto a 'Stato di interruzione del servizio'
-* Correzioni di sicurezza minori nella lettura di corpi multipli, id-occupanti e id-stanze

@@ -1,2 +1,0 @@
-* Pokazywanie „ostatnio widziany” wyraźnie w tytule rozmowy (gdy włączone)
-* Różne poprawki błędów

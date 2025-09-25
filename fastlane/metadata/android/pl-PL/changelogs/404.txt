@@ -1,1 +1,0 @@
-* Drobne poprawienie stabilności rozmów audio/wideo

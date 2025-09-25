@@ -1,2 +1,0 @@
-* Naprawienie wyboru awatara na niektórych urządzeniach z Android 10
-* Naprawienie przesyłania większych plików

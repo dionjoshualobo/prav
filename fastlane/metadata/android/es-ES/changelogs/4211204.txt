@@ -1,2 +1,0 @@
-* La llamada ya no se silencia cuando se cambia el dispositivo de salida
-* Dispositivos Umidigi excluidos de la integración de llamadas

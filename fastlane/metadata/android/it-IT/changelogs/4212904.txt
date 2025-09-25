@@ -1,2 +1,0 @@
-* Corretti alcuni errori minori dell'interfaccia
-* Corretti problemi di connessione con domini .onion su porte non predefinite

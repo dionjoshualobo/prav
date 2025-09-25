@@ -1,2 +1,0 @@
-* Dodanie przycisku do przełączania kamery podczas rozmowy wideo
-* Naprawienie rozmów wideo na tabletach

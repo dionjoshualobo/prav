@@ -1,2 +1,0 @@
-* Einfacherer Zugang zu den Datenschutzbestimmungen in der Play Store-Version (Quicksy und Conversations)
-* Entfernen der Adressbuchintegration in der Play Store-Version von Conversations

@@ -1,2 +1,0 @@
-* arranxo das reaccións a ficheiros recibidos por P2P
-* mellora da resolución de URI

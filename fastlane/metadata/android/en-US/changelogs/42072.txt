@@ -1,3 +1,0 @@
-* Bump libwebrtc dependency to M117 and bump libvpx
-* Go back to AAC for voice messages
-* Support per app language settings

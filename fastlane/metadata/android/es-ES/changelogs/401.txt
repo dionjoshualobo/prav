@@ -1,2 +1,0 @@
-* búsqueda fija en Android <= 5
-* optimizar el consumo de la memoria

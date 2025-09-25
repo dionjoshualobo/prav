@@ -1,2 +1,0 @@
-* Mostra sempre il pulsante di chiamata
-* Varie correzioni di errori

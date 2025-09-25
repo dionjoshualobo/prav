@@ -1,1 +1,0 @@
-* Se solucionó un error de la interfaz de usuario al mostrar múltiples reacciones

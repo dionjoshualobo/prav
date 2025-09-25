@@ -1,2 +1,0 @@
-* Aggiunta la possibilità di scegliere il percorso dei backup
-* Più URI (tel:, mailto:) cliccabili

@@ -1,2 +1,0 @@
-* Lisasime nupu kaamera vahetamiseks videokõne ajal
-* Parandasime häälkõnede toimimise tahvelarvutites

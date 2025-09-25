@@ -1,3 +1,0 @@
-* Oferă generarea de invitație facilă pe serverele care suportă
-* Afișează GIFuri trimise din Movim
-* stochează avatarii în cache

@@ -1,3 +1,0 @@
-* P2P failide teisaldamise tugi kasutades WebRTC andmekanaleid
-* Parandasime Bind 2.0 ühilduvusvead, kui kasutusel on ejabberd
-* Lisasime rakendusele Let’s Encrypti juursertifikaadid, kui kasutusel on Android <= 7

@@ -1,2 +1,0 @@
-* arranxo da integración de chamadas nalgúns Android 14
-* novo axuste para 'Convites de Descoñecidas'

@@ -1,2 +1,0 @@
-* Arranxo das chamadas en Android 15
-* Arranxo do problema raro / regresión introducido en 2.17.0

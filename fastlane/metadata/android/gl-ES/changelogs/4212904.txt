@@ -1,2 +1,0 @@
-* arranxo de problemas menores na interface
-* arranxo de problemas coa conexión a dominios .onion en portos non predeterminados

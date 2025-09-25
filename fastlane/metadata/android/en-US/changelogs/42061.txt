@@ -1,1 +1,0 @@
-* Remove channel discovery feature from Google Play version

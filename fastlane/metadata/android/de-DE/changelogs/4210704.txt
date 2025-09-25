@@ -1,3 +1,0 @@
-* Nutzung des Material 3 Designs
-* Einstellungen umgestaltet
-* Lesestatus geräteübergreifend synchronisieren

@@ -1,2 +1,0 @@
-* Elixir onde se garda a copia de apoio
-* Máis URIs (tel:, mailto:) seleccionables

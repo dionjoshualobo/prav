@@ -1,3 +1,0 @@
-* Parandasime hääl- ja videokõned Android 8's
-* Parandasime vea protsesside trügimisega lõimitud kõnede puhul
-* Parandasime vea kui videopakkimine jäi muutmatuks

@@ -1,2 +1,0 @@
-* Fix reactions on files received via P2P
-* Improve URI matching

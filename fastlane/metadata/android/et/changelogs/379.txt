@@ -1,1 +1,0 @@
-* Lisasime hääl- ja videokõnede võimaluse (eeldab, et server oskab kasutada STUN ja TURN servereid, mis on leitavad XEP-0215 alusel)

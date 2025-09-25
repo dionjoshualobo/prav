@@ -1,4 +1,0 @@
-* Leichterer Zugriff auf 'QR-Code anzeigen'
-* Unterstützung von PEP Native Bookmarks
-* Unterstützung für SDP Offer / Answer-Model (wird von SIP Gateways verwendet)
-* Anhebung der Ziel-API auf Android 14

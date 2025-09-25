@@ -1,3 +1,36 @@
+# Prav
+
+## A user-friendly messenger for everyone with a focus on privacy and freedom!
+
+Whether you want to text your friends and family, or to make calls, prav app makes it easy for you. It provides convenient onboarding and user-friendly interface.
+
+We believe privacy is a fundamental right and should be easily exercised by anyone.
+
+With prav, your chats are private and only you can read them https://prav.app/privacy-policy/. It is based on XMPP protocol, so users can talk to any other XMPP users all over the world, without being locked-in to a service.
+
+Prav's source code is available publicly under a free license, providing transparency and audatibility. We are backed by a cooperative society in India, leading to democratic decision making.
+
+Learn more at https://prav.app.
+
+Credits: Prav is built on Quicksy.
+
+Please note that Prav is still in public beta.
+
+## Build instructions
+```
+sudo apt install android-sdk android-sdk-platform-23
+export ANDROID_HOME=/usr/lib/android-sdk
+./gradlew assembleQuicksyFreeRelease
+```
+The above will give output in `build/outputs/apk/quicksyFree/release`
+
+### Updating assets
+If you want to change a logo/icon/whatever, change the svg in /art, install ruby, ruby-libxml, and run render.rb 
+
+<hr>
+
+# Original README
+
 <h1 align="center">Conversations</h1>
 
 <p align="center">Conversations: the very last word in instant messaging</p>

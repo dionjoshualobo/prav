@@ -1,1 +1,0 @@
-* Dodanie limitu czasu zestawiania połączenia

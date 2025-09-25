@@ -1,3 +1,0 @@
-* Kasutame Material 3 kujundust
-* Korraldasime seadistused ümber
-* Sünkroniseerime lugemise olekuid eri seadmete vahel

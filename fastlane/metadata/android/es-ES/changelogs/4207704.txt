@@ -1,3 +1,0 @@
-* Soporta DNS Privado (DNS sobre TLS)
-* Icono temático del lanzador
-* Corrección de un problema de permisos poco frecuente al compartir archivos en Android 11+

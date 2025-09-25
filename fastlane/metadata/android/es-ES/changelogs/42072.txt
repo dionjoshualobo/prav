@@ -1,3 +1,0 @@
-* Aumenta la dependencia de libwebrtc a M117 y aumenta la de libvpx.
-* Volver a AAC para mensajes de voz
-* Soporta ajustes de idioma por aplicación

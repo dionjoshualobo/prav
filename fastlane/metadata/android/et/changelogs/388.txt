@@ -1,3 +1,0 @@
-* Vähendasime mõnedes seadmetes kaja kõne keskel
-* Parandasime sisselogimisvea, kui salasõnas oli erilisi tähemärke
-* Videokõnede ajal esitame nüüd valjuhääldis valimistooni ja kinnist tooni

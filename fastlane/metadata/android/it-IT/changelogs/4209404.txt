@@ -1,1 +1,0 @@
-* Corrette regressioni minori introdotte con la 2.13.1

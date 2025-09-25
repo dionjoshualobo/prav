@@ -1,3 +1,0 @@
-* Parandasime sõnumite kordussaatmise SASL2 kasutamisel
-* Parandasime musta videovaate tekkimise mõnede seadmete puhul
-* Parandasime rakenduse kokkujooksmise tühja salasõna puhul

@@ -1,2 +1,0 @@
-* Domeen kuulub alati verifitseerimisele ja seda kasutaja muuta ei saa
-* Serveripõhise kontaktnimestiku eelautentimine

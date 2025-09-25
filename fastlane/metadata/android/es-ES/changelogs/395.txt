@@ -1,3 +1,0 @@
-* Añadir 'Volver al chat' a la pantalla de llamada de audio
-* Mejorar los atajos del teclado
-* corrección de errores

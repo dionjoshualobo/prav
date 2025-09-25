@@ -1,1 +1,0 @@
-* Mejorar la integración de las llamadas A/V en el sistema operativo

@@ -1,2 +1,0 @@
-* Xuntar máis as burbullas das mensaxes no lugar de xuntalas
-* Poder agochar os avatares na vista de conversas cando non é estritamente necesario (Axustes -> Interface -> Burbullas -> Mostrar avatares)

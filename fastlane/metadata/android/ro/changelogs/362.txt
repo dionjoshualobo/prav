@@ -1,1 +1,0 @@
-* Suport pentru comutarea automată a temei pe Android 10

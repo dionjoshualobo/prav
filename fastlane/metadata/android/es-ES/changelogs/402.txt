@@ -1,3 +1,0 @@
-* Ofrece la generación de invitaciones fáciles en los servidores compatibles
-* Mostrar GIFs enviados desde Movim
-* Almacenar avatares en caché

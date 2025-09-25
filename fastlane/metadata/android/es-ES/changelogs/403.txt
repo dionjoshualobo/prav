@@ -1,3 +1,0 @@
-* Corregidos problemas de conectividad cuando diferentes cuentas utilizaban diferentes mecanismos SCRAM.
-* Añadir soporte para SCRAM-SHA-512
-* Permitir la transferencia de archivos P2P (Jingle) con autocontacto

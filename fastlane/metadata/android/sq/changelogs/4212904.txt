@@ -1,2 +1,0 @@
-* Ndreqje e disa të metave të vockla në UI
-* Ndreqje problemesh lidhjeje me përkatësi .onion në porta jo-parazgjedhje

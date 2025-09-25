@@ -1,2 +1,0 @@
-* fix call integration on some Android 14 devices
-* Introduce 'Invites from Strangers' setting

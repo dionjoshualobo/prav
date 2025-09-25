@@ -1,2 +1,0 @@
-* 在 Android 5 以上版本上提供 PDF 预览
-* 为 OMEMO 使用 12 byte IVs

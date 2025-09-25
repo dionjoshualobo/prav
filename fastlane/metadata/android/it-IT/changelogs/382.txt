@@ -1,2 +1,0 @@
-* Aggiunto un pulsante per cambiare telecamera durante la videochiamata
-* Corrette le chiamate vocali sui tablet

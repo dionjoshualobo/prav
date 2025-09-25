@@ -1,3 +1,0 @@
-* Offerti valori massimi di accettazione file più alti
-* Mostrate maggiori informazioni in 'Info server'
-* Varie correzioni di errori

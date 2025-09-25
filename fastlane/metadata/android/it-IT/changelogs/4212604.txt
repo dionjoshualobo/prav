@@ -1,2 +1,0 @@
-* Spostati i messaggi più vicini tra di loro invece di unirli
-* Aggiunta possibilità di nascondere gli avatar nelle chat quando non strettamente necessario (Impostazioni -> Interfaccia -> Messaggi di chat -> Mostra avatar)

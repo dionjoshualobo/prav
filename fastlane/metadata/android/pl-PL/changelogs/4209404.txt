@@ -1,1 +1,0 @@
-* Naprawiono małą regresję wprowadzoną w 2.13.1

@@ -1,4 +1,0 @@
-* Umożliwienie wstrzymania nagrywania dźwięku poprzez kliknięcie czasomierza
-* Naprawienie reakcji w prywatnych wiadomościach w rozmowie grupowej
-* Koniec akceptowania „zastępczych wiadomości”, dla reakcji, potwierdzeń i wskaźników przeczytania
-* Dodanie paru więcej ikonek załączników
