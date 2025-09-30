@@ -1,3 +1,0 @@
-* Obsługa plików GPX
-* Poprawienie wydajności przywracania kopii zapasowej
-* Naprawienie błędów

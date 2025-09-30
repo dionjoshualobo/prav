@@ -1,2 +1,0 @@
-* Verificar siempre el nombre del dominio. No sobrescribir al usuario
-* Soporta pre autenticación de roster

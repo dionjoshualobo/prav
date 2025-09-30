@@ -1,3 +1,0 @@
-* Programe copias de seguridad periódicas
-* Excluir todos los dispositivos realme hasta Android 11 de la integración de llamadas
-* Mejoras menores en la interfaz de usuario (burbuja de mensaje)

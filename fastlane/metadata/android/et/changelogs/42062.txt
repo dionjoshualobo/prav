@@ -1,1 +1,0 @@
-* Lülitasime välja võimaluse avada failihaldurist varukoopia faile (.ceb)

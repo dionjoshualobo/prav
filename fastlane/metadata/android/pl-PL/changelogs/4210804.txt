@@ -1,2 +1,0 @@
-* Pokazywanie stanu wiadomości poprzez ikony
-* Wprowadzenia ustawienia „Duża czcionka” dla baniek wiadomości

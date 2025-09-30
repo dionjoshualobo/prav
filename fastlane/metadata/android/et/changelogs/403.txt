@@ -1,3 +1,0 @@
-* Parandasime ühendusvyse vead, kui erinevad kasutajakontod kasutasid erinevaid SCRAMi meetodeid
-* Lisasime SCRAM-SHA-512 toe
-* Failide teisaldamine Jingle'i protokolliga võrdõigusvõrgus (P2P) iseenda kontoga

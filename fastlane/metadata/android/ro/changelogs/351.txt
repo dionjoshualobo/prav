@@ -1,3 +1,0 @@
-* reparații pentru transferul de fișiere Jingle IBB
-* reparații pentru corecțiile repetate care umplu baza de date
-* schimbarea la Corectarea Ultimului Mesaj v1.1

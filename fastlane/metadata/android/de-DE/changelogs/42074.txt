@@ -1,3 +1,0 @@
-* Unterstützung von Private DNS (DNS über TLS)
-* Unterstützung für designbasiertes Startsymbol
-* Behebt ein seltenes Berechtigungsproblem beim Teilen von Dateien unter Android 11+

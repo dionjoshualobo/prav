@@ -1,2 +1,0 @@
-* corectat căutarea pe Android <= 5
-* optimizat consumul de memorie

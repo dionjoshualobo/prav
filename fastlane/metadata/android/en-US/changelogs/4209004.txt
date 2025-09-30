@@ -1,2 +1,0 @@
-* minor bug fixes
-* slight modifications in Quicksy onboard flow

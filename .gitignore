@@ -46,3 +46,6 @@ proguard/
 
 import-summary.txt
 .navigation/
+
+*.dm
+output-metadata.json

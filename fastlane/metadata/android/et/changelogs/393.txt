@@ -1,3 +1,0 @@
-* Kui hääl- või videokõne ei õnnestu, siis näitame abiteabe nuppu
-* Parandasime mõned tüütud kokkujooksmised
-* Parandasime Jingle'i-põhiste ühenduste (failide teisaldamine + kõned) toimimise ainult JID alusel

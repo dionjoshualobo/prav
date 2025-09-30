@@ -1,3 +1,0 @@
-* muutsime vaikimisi allalaaditavate failide mahu suuremaks
-* näitame rohkem teavet valikus „Serveri info“
-* parandasime mitmeid vigu

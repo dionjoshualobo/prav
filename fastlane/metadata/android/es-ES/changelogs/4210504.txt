@@ -1,2 +1,0 @@
-* Restaurar el acceso a Channel Discovery para Android 6+7
-* Mejorar el registro para la integración de llamadas fallidas

@@ -1,1 +1,0 @@
-* Migliorata l'integrazione di chiamate A/V nel sistema operativo

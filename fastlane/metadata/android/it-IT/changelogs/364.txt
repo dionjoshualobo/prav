@@ -1,2 +1,0 @@
-* Fornisce l'anteprima PDF su Android 5+
-* Utilizzo di IVs a 12 byte per OMEMO

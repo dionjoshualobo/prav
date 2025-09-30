@@ -1,2 +1,0 @@
-* Naprawienie niepokazywania powiadomień w pewnych sytuacjach
-* Naprawienie problemów z kompatybilnością i awarii związanych z rozmowami audio/wideo

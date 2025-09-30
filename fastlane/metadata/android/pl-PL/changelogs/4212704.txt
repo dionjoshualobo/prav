@@ -1,1 +1,0 @@
-* Dodanie możliwości pokazywania dymków wiadomości wyrównanych do lewej

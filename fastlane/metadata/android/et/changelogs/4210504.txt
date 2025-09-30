@@ -1,2 +1,0 @@
-* Taastasime Android 6+7 puhul ligipääsu kanalite tuvastamisele
-* Parandasime logimist, kui lõimitud kõned ei toimi

@@ -1,2 +1,0 @@
-* excluir dispositivos Oppo antiguos de la integración de llamadas
-* varios arreglos

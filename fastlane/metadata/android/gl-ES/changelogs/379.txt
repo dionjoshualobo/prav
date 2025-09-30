@@ -1,1 +1,0 @@
-* Chamadas de Audio/Video (Require soporte no servidor para que os servidores STUN e TURN sexan accesibles vía XEP-0215)

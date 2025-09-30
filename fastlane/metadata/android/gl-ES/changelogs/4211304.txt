@@ -1,1 +1,0 @@
-* Crear a Copia de Apoio usando o servizo en primeiro plano para evitar que sexa detido após 10 minutos

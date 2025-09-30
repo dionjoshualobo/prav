@@ -1,1 +1,0 @@
-* Kujunduse automaatse vahetamise tugi Android 10 puhul

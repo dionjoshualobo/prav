@@ -1,2 +1,0 @@
-* esclusione di dispositivi Oppo obsoleti dall'integrazione delle chiamate
-* correzione di vari errori

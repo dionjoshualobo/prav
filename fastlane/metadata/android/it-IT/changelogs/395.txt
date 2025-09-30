@@ -1,3 +1,0 @@
-* Aggiunta la funzione "Torna alla chat" alla schermata delle chiamate audio
-* Migliorate le scorciatoie da tastiera
-* Correzioni di errori

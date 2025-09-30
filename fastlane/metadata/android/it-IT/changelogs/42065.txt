@@ -1,1 +1,0 @@
-* Introdotto un nuovo formato di file di backup

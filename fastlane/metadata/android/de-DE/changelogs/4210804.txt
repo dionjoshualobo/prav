@@ -1,2 +1,0 @@
-* Nachrichtenstatus als Symbole anzeigen
-* Einstellung für Schriftgröße der Nachrichten hinzugefügt

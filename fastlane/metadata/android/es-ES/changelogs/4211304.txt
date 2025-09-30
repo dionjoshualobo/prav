@@ -1,1 +1,0 @@
-* Ejecute la copia de seguridad como servicio en primer plano para que el proceso no se detenga después de 10 minutos

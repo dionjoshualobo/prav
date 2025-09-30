@@ -1,2 +1,0 @@
-* Quicksy Registrierung auf Android 6/7 repariert
-* Klingelton für eingehende Anrufe im Benachrichtigungskanal abspielen

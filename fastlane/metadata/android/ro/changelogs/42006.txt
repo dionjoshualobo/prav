@@ -1,2 +1,0 @@
-* Verifică apelurile A/V cu sesiuni OMEMO preexistente
-* Îmbunătățit compatibilitatea cu implementări WebRTC non libwebrtc

@@ -1,2 +1,0 @@
-* Wyłączenie starszych urządzeń Umidigi z integracji rozmów
-* Różne poprawki błędów

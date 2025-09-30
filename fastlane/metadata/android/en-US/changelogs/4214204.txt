@@ -1,2 +1,0 @@
-* Support 'Service Outage Status'
-* Minor security fixes for parsing multiple bodies, occupant-ids and stanza-id

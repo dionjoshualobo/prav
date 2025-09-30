@@ -1,2 +1,0 @@
-* Mostrar el estado de los mensajes como iconos
-* Introducir la opción "Fuente grande" para las burbujas de mensajes

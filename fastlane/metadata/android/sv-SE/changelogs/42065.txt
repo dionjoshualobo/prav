@@ -1,1 +1,0 @@
-* Introducera nytt fil-format för säkerhetskopiering

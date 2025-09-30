@@ -1,3 +1,0 @@
-* Mbulim shpërnguljesh kartelash P2P përmes kanalesh WebRTC të dhënash
-* Ndreqje problemesh shkalle ndërveprimi me Bind 2.0 në ejabberd
-* Paketim dëshmish Let’s Encrypt rrënje për Android <= 7

@@ -1,3 +1,0 @@
-* Corretto il reinvio dei messaggi quando si usa SASL2
-* Corretto il video nero tra alcuni dispositivi
-* Corretto l'arresto anomalo delle password vuote

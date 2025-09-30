@@ -1,3 +1,0 @@
-* Wiederkehrende Sicherungen planen
-* Realme-Geräte von der Anrufintegration ausgenommen
-* Kleine Designverbesserungen (Chatblasen)

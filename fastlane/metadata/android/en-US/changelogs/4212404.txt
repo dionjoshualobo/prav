@@ -1,2 +1,0 @@
-* Always show call button
-* Various bug fixes

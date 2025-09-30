@@ -1,2 +1,0 @@
-* Naprawienie wyłączania wyciszenia rozmowy przy przełączaniu urządzeń wyjściowych
-* Wyłączenie wszystkich urządzeń Umidigi z integracji rozmów

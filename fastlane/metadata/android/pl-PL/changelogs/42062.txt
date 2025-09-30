@@ -1,1 +1,0 @@
-* Wyłączenie otwierania plików kopii zapasowej (.ceb) z przeglądarki plików

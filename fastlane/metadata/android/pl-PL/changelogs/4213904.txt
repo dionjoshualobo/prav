@@ -1,2 +1,0 @@
-* Dodanie możliwości wybierania lokalizacji kopii zapasowej
-* Więcej klikalnych URI (tel:, mailto:)

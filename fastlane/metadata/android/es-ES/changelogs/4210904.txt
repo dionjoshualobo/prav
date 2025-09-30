@@ -1,2 +1,0 @@
-* Arreglar el registro de Quicksy en Android 6/7
-* Reproducir el tono de llamada entrante en el canal de notificación

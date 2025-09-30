@@ -1,1 +1,0 @@
-* Soporte para los parámetros URI de XMPP «?register» y «?register;preauth»

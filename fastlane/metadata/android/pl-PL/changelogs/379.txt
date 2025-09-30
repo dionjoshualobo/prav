@@ -1,1 +1,0 @@
-* Rozmowy audio/wideo (wymagają wsparcia serwera w formie serwerów STUN i TURN odkrywalnych przez XEP-0215)

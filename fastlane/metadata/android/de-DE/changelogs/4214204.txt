@@ -1,2 +1,0 @@
-* Unterstützung des "Dienstausfallstatus"
-* Geringfügige Sicherheitskorrekturen für das Analysieren mehrerer Body-Elemente, Teilnehmer-IDs und Stanza-ID

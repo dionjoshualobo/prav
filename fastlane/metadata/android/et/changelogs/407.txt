@@ -1,3 +1,0 @@
-* Kui kasutajate kõnetugi on varem tuvastatud, siis kuvame kõne nupu ka siis, kui kasutaja pole võrgus
-* Tagasi-nupp ühendatud kõne puhul enam ei lõpeta kõnet
-* Veaparandused

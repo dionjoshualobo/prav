@@ -1,3 +1,0 @@
-* Reparar llamadas de audio/vídeo en Android 8
-* Se corrigió la condición de carrera en la integración de nuevas llamadas.
-* Soluciona el problema de compresión de video

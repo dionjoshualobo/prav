@@ -1,2 +1,0 @@
-* Korrektur der Reaktionen bei über P2P empfangenen Dateien
-* Verbesserung des URI-Abgleichs

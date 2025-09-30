@@ -1,2 +1,0 @@
-* Mostra lo stato dei messaggi come icone
-* Introdotta impostazione 'Caratteri grandi' per i messaggi

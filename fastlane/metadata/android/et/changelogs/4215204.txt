@@ -1,2 +1,0 @@
-* Avalike kanalite puhul kuvame alapealkirjas osalejate arvu
-* Parandasime jututubadega liitumise vea, mis tekkis väga vanades Prosody serverites

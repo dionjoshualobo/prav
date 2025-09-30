@@ -1,1 +1,0 @@
-* Behebung kleinerer Schwierigkeiten, die mit 2.13.1 eingeführt wurden

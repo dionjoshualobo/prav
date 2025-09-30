@@ -1,2 +1,0 @@
-* Anruf-Taste immer anzeigen
-* Verschiedene Fehlerbehebungen

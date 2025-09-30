@@ -1,2 +1,0 @@
-* Ndreqje reagimesh ndaj kartelash të marra përmes P2P
-* Përmirësim përkimi URI-sh

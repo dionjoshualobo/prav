@@ -1,3 +1,0 @@
-* Kui video puhul kaugseadme ekraani küljesuhe ei klapi, siis lisame pildile mustad ääres
-* Parem otsingujõudlus
-* Seadistus ekraanitõmmiste tegemise keelamiseks

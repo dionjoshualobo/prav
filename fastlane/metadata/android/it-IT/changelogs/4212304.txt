@@ -1,2 +1,0 @@
-* Correzione delle chiamate su Android 15
-* Corretto un raro crash / regressione introdotto nella 2.17.0

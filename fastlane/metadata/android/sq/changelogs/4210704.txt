@@ -1,3 +1,0 @@
-* Përdorim teme Material 3
-* Risistemim rregullimesh
-* Njëkohësim nëpër pajisje gjendjeje “i lexuar”

@@ -1,2 +1,0 @@
-* exkludera äldre Oppo-enheter från samtalsintegrering
-* diverse bugg-fixar

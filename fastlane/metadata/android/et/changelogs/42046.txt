@@ -1,1 +1,0 @@
-* Lõimisime UnifiedPushi tõuketeenuste levitajana teistele UnifiedPushi kasutajatele nagu Tusky ja Fedilab
