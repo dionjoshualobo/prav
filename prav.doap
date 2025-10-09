@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="../style.xsl" type="text/xsl"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Project xmlns="http://usefulinc.com/ns/doap#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:xmpp="https://linkmauve.fr/ns/xmpp-doap#"
+         xmlns:schema="https://schema.org/">
+    <name>Prav</name>
+
+    <created>2023-10-25</created>
+
+    <shortdesc xml:lang="en">XMPP Client for Android</shortdesc>
+
+    <description xml:lang="en">Prav is a user-friendly messenger for everyone with a focus on privacy and freedom!</description>
+
+    <homepage rdf:resource="https://prav.app"/>
+    <download-page rdf:resource="https://f-droid.org/en/packages/app.prav.client/"/>
+    <bug-database rdf:resource="https://codeberg.org/prav/prav/issues"/>
+    <!-- See https://github.com/ewilderj/doap/issues/53 -->
+    <developer-forum rdf:resource="xmpp:prav-devel@chat.disroot.org?join"/>
+    <support-forum rdf:resource="xmpp:prav@chat.disroot.org?join"/>
+
+    <license rdf:resource="https://codeberg.org/prav/prav/src/branch/main/LICENSE"/>
+
+    <!-- See https://github.com/ewilderj/doap/issues/49 -->
+    <language>en</language>
+    <language>hi</language>
+
+    <schema:logo rdf:resource="https://codeberg.org/prav/prav/raw/branch/main/logo.png"/>
+    <schema:screenshot rdf:resource='https://codeberg.org/prav/prav/src/branch/main/fastlane/metadata/android/en-US/images/phoneScreenshots/04.png'/>
+    
+    <programming-language>Java</programming-language>
+
+    <os>Android</os>
+
+    <category rdf:resource="https://linkmauve.fr/ns/xmpp-doap#category-xmpp"/>
+    <category rdf:resource="https://linkmauve.fr/ns/xmpp-doap#category-jabber"/>
+    <category rdf:resource="https://linkmauve.fr/ns/xmpp-doap#category-client"/>
+
+    <maintainer>
+        <foaf:Group>
+            <foaf:name>Prav Project</foaf:name>
+            <foaf:homepage rdf:resource="https://prav.app/"/>
+        </foaf:Group>
+    </maintainer>
+
+    <repository>
+        <GitRepository>
+            <browse rdf:resource="https://codeberg.org/prav/prav"/>
+            <location rdf:resource="https://codeberg.org/prav/prav.git"/>
+        </GitRepository>
+    </repository> 
+</Project>
+</rdf:RDF>
